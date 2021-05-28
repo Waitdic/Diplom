@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace COPOL.Forms
 {
-    public partial class Form2 : System.Windows.Forms.Form
+    public partial class InitialDataForm : Form
     {
-        public Form2()
+        public InitialDataForm()
         {
             InitializeComponent();
         }

@@ -56,21 +56,18 @@ namespace COPOL.BLL
         /// </summary>
         public int AxesCount
         {
-            get => _mnAxesCount; 
             set => _mnAxesCount = value; 
         }
 
-        /// <summary>
+        // TODO : Возможно исключить данный метод.
+        /*/// <summary>
         /// Метод рисования координатных осей.
         /// </summary>
         /// <param name="objGraphics">График.</param>
         public void DrawAxises(Graphics objGraphics)
         {
             var drawRect = objGraphics.VisibleClipBounds;
-            var pen = new Pen(Color.Black)
-            {
-                DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot
-            };
+            var pen = new Pen(Color.Black) { DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot };
 
             // Горизонтальные оси X
             var myBrush = new SolidBrush(Color.Blue);
@@ -111,7 +108,7 @@ namespace COPOL.BLL
             }
 
             pen.Dispose();
-        }
+        }*/
         
         /// <summary>
         /// Метод для рисования окружностей первого типа.
@@ -122,7 +119,7 @@ namespace COPOL.BLL
         public void DrawCircleType1(Graphics objGraphics, Pen userPen, float argParam /* R' */)
         {
             var nCenterX = argParam / (1 + argParam);   // u - из книги
-            var nCenterY = 0f;                              // v - из книги
+            var nCenterY = 0f;                               // v - из книги
             var nRadiusX = 1 / (1 + argParam);          // - из книги
             var nRadiusY = 1 / (1 + argParam);          // - из книги
 
@@ -131,7 +128,12 @@ namespace COPOL.BLL
             ConvertLength(CoordinateType.X, objGraphics, ref nRadiusX);
             ConvertLength(CoordinateType.Y, objGraphics, ref nRadiusY);
 
-            objGraphics.DrawEllipse(userPen, nCenterX - nRadiusX, nCenterY - nRadiusY, nRadiusX * 2, nRadiusY * 2);
+            objGraphics.DrawEllipse(
+                userPen, 
+                nCenterX - nRadiusX,
+                nCenterY - nRadiusY,
+                nRadiusX * 2,
+                nRadiusY * 2);
         }
 
         /// <summary>
@@ -149,13 +151,16 @@ namespace COPOL.BLL
             var nRadiusX = Math.Abs(1 / argParam);  // - из книги
             var nRadiusY = Math.Abs(1 / argParam);  // - из книги
 
-            //координаты точки пересечения каждой дуги с 1-чной окружностью (относительно осей координат, проведенных через центр окружности 2-го типа)
+            // Координаты точки пересечения каждой дуги с 1-чной окружностью
+            // (относительно осей координат, проведенных через центр окружности 2-го типа)
             var nX = ((argParam * argParam) - 1) / ((argParam * argParam) + 1);
             var nY = (2 * argParam) / ((argParam * argParam) + 1);
 
             //перевод в координаты U,V
             var nClientX = 1 - nX;
-            var nClientY = nX >= 0 ? Math.Abs(nY) - nRadiusY : nRadiusY - Math.Abs(nY);
+            var nClientY = nX >= 0 
+                ? Math.Abs(nY) - nRadiusY 
+                : nRadiusY - Math.Abs(nY);
             
             ConvertLength(CoordinateType.X, objGraphics, ref nClientX);
             ConvertLength(CoordinateType.Y, objGraphics, ref nClientY);
@@ -184,15 +189,7 @@ namespace COPOL.BLL
             drawRect.Y = (int)(nCenterY - nRadiusY);
             drawRect.Width = (int)(nRadiusX * 2);
             drawRect.Height = (int)(nRadiusY * 2);
-            
-            try
-            {
-                objGraphics.DrawArc(userPen, drawRect, (float)startAngle, (float)sweepAngle);
-            }
-            catch
-            {
-                
-            }
+            objGraphics.DrawArc(userPen, drawRect, (float)startAngle, (float)sweepAngle);
         }
         
         /// <summary>
@@ -208,10 +205,10 @@ namespace COPOL.BLL
             switch(coordType)
             {
                 case CoordinateType.X:
-                    nCoord = drawRect.Width * ((nCoord - _xMin) / (_xMax - _xMin));
+                    nCoord = (drawRect.Width - 15) * ((nCoord - _xMin) / (_xMax - _xMin));
                     break;
                 case CoordinateType.Y:
-                    nCoord = drawRect.Height * ((_yMax - nCoord) / (_yMax - _yMin));
+                    nCoord = (drawRect.Height - 15) * ((_yMax - nCoord) / (_yMax - _yMin));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("Ошибка. " + nameof(coordType));
@@ -231,16 +228,16 @@ namespace COPOL.BLL
             switch(coordType)
             {
                 case CoordinateType.X:
-                    nLength = drawRect.Width * (nLength / (_xMax - _xMin));
+                    nLength = (drawRect.Width - 15) * (nLength / (_xMax - _xMin));
                     break;
                 case CoordinateType.Y:
-                    nLength = drawRect.Height * (nLength / (_yMax - _yMin));
+                    nLength = (drawRect.Height - 15) * (nLength / (_yMax - _yMin));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("Ошибка. " + nameof(coordType));
             }
         }
-        
+
         /// <summary>
         /// Метод отрисовки текста.
         /// </summary>
@@ -248,20 +245,20 @@ namespace COPOL.BLL
         /// <param name="color"></param>
         /// <param name="textFont"></param>
         /// <param name="text"></param>
-        /// <param name="xCoordText"></param>
-        /// <param name="yCoordText"></param>
+        /// <param name="x">X координата текста.</param>
+        /// <param name="y">Y координата текста.</param>
         public void DrawText(
             Graphics objGraphics,
             Color color,
             Font textFont,
             string text,
-            float xCoordText,
-            float yCoordText)
+            float x,
+            float y)
         {
             var myBrush = new SolidBrush(color);
-            ConvertCoord(CoordinateType.X, objGraphics, ref xCoordText);
-            ConvertCoord(CoordinateType.Y, objGraphics, ref yCoordText);
-            objGraphics.DrawString(text, textFont, myBrush, xCoordText, yCoordText);
+            ConvertCoord(CoordinateType.X, objGraphics, ref x);
+            ConvertCoord(CoordinateType.Y, objGraphics, ref y);
+            objGraphics.DrawString(text, textFont, myBrush, x, y);
         }
 
         /// <summary>
