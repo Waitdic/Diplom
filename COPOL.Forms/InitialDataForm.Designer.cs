@@ -24,55 +24,55 @@ namespace COPOL.Forms
         #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialDataForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Vds0 = new System.Windows.Forms.NumericUpDown();
+            this.Ids0 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gm = new System.Windows.Forms.NumericUpDown();
+            this.Ld = new System.Windows.Forms.NumericUpDown();
+            this.Ls = new System.Windows.Forms.NumericUpDown();
+            this.Cgd = new System.Windows.Forms.NumericUpDown();
+            this.Cds = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
+            this.Cgs = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.f = new System.Windows.Forms.TextBox();
+            this.P = new System.Windows.Forms.NumericUpDown();
+            this.Z = new System.Windows.Forms.NumericUpDown();
+            this.N = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -80,28 +80,53 @@ namespace COPOL.Forms
             this.OkButton = new System.Windows.Forms.Button();
             this.CleanButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Vds0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Ids0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.gm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Ld)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Ls)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Cgd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Cds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Cgs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.P)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Z)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.N)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Vds0);
+            this.groupBox1.Controls.Add(this.Ids0);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(333, 244);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Рабочая точка";
+            // 
+            // Vds0
+            // 
+            this.Vds0.Location = new System.Drawing.Point(48, 211);
+            this.Vds0.Name = "Vds0";
+            this.Vds0.Size = new System.Drawing.Size(84, 20);
+            this.Vds0.TabIndex = 36;
+            // 
+            // Ids0
+            // 
+            this.Ids0.Location = new System.Drawing.Point(193, 211);
+            this.Ids0.Name = "Ids0";
+            this.Ids0.Size = new System.Drawing.Size(84, 20);
+            this.Ids0.TabIndex = 34;
             // 
             // label5
             // 
@@ -114,8 +139,8 @@ namespace COPOL.Forms
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image) (resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(6, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(305, 185);
@@ -123,17 +148,10 @@ namespace COPOL.Forms
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(47, 210);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 4;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(129, 213);
+            this.label4.Location = new System.Drawing.Point(138, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 13);
             this.label4.TabIndex = 7;
@@ -142,7 +160,7 @@ namespace COPOL.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(158, 217);
+            this.label3.Location = new System.Drawing.Point(158, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 3;
@@ -157,31 +175,24 @@ namespace COPOL.Forms
             this.label2.TabIndex = 2;
             this.label2.Text = "Vds0 = ";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(199, 210);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(76, 20);
-            this.textBox2.TabIndex = 5;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.gm);
+            this.groupBox2.Controls.Add(this.Ld);
+            this.groupBox2.Controls.Add(this.Ls);
+            this.groupBox2.Controls.Add(this.Cgd);
+            this.groupBox2.Controls.Add(this.Cds);
             this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.Cgs);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.pictureBox2);
@@ -192,6 +203,41 @@ namespace COPOL.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Параметры транзистора";
             // 
+            // gm
+            // 
+            this.gm.Location = new System.Drawing.Point(202, 228);
+            this.gm.Name = "gm";
+            this.gm.Size = new System.Drawing.Size(84, 20);
+            this.gm.TabIndex = 40;
+            // 
+            // Ld
+            // 
+            this.Ld.Location = new System.Drawing.Point(202, 188);
+            this.Ld.Name = "Ld";
+            this.Ld.Size = new System.Drawing.Size(84, 20);
+            this.Ld.TabIndex = 39;
+            // 
+            // Ls
+            // 
+            this.Ls.Location = new System.Drawing.Point(202, 153);
+            this.Ls.Name = "Ls";
+            this.Ls.Size = new System.Drawing.Size(84, 20);
+            this.Ls.TabIndex = 38;
+            // 
+            // Cgd
+            // 
+            this.Cgd.Location = new System.Drawing.Point(39, 224);
+            this.Cgd.Name = "Cgd";
+            this.Cgd.Size = new System.Drawing.Size(84, 20);
+            this.Cgd.TabIndex = 37;
+            // 
+            // Cds
+            // 
+            this.Cds.Location = new System.Drawing.Point(39, 186);
+            this.Cds.Name = "Cds";
+            this.Cds.Size = new System.Drawing.Size(84, 20);
+            this.Cds.TabIndex = 36;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -201,6 +247,13 @@ namespace COPOL.Forms
             this.label14.TabIndex = 20;
             this.label14.Text = "нГн";
             // 
+            // Cgs
+            // 
+            this.Cgs.Location = new System.Drawing.Point(39, 153);
+            this.Cgs.Name = "Cgs";
+            this.Cgs.Size = new System.Drawing.Size(84, 20);
+            this.Cgs.TabIndex = 35;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -209,20 +262,6 @@ namespace COPOL.Forms
             this.label15.Size = new System.Drawing.Size(25, 13);
             this.label15.TabIndex = 19;
             this.label15.Text = "нГн";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(210, 190);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(76, 20);
-            this.textBox7.TabIndex = 18;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(210, 155);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(76, 20);
-            this.textBox8.TabIndex = 17;
             // 
             // label16
             // 
@@ -260,20 +299,6 @@ namespace COPOL.Forms
             this.label11.TabIndex = 13;
             this.label11.Text = "пФ";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(210, 228);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(76, 20);
-            this.textBox5.TabIndex = 12;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(47, 228);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(76, 20);
-            this.textBox6.TabIndex = 11;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -310,20 +335,6 @@ namespace COPOL.Forms
             this.label7.TabIndex = 7;
             this.label7.Text = "пФ";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(47, 187);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(76, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(47, 152);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(76, 20);
-            this.textBox4.TabIndex = 4;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -344,8 +355,8 @@ namespace COPOL.Forms
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image) (resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(6, 19);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(305, 117);
@@ -355,28 +366,56 @@ namespace COPOL.Forms
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.f);
+            this.groupBox3.Controls.Add(this.P);
+            this.groupBox3.Controls.Add(this.Z);
+            this.groupBox3.Controls.Add(this.N);
             this.groupBox3.Controls.Add(this.label28);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.textBox12);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.textBox9);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox11);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Location = new System.Drawing.Point(361, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(151, 244);
+            this.groupBox3.Size = new System.Drawing.Size(191, 244);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Расчета конутуров";
+            // 
+            // f
+            // 
+            this.f.Location = new System.Drawing.Point(31, 39);
+            this.f.Name = "f";
+            this.f.Size = new System.Drawing.Size(114, 20);
+            this.f.TabIndex = 34;
+            // 
+            // P
+            // 
+            this.P.Location = new System.Drawing.Point(34, 176);
+            this.P.Name = "P";
+            this.P.Size = new System.Drawing.Size(111, 20);
+            this.P.TabIndex = 33;
+            // 
+            // Z
+            // 
+            this.Z.Location = new System.Drawing.Point(34, 129);
+            this.Z.Name = "Z";
+            this.Z.Size = new System.Drawing.Size(111, 20);
+            this.Z.TabIndex = 32;
+            // 
+            // N
+            // 
+            this.N.Location = new System.Drawing.Point(34, 86);
+            this.N.Name = "N";
+            this.N.Size = new System.Drawing.Size(111, 20);
+            this.N.TabIndex = 31;
             // 
             // label28
             // 
@@ -417,18 +456,11 @@ namespace COPOL.Forms
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(115, 179);
+            this.label23.Location = new System.Drawing.Point(151, 178);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(28, 13);
             this.label23.TabIndex = 25;
             this.label23.Text = "дБм";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(33, 176);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(76, 20);
-            this.textBox12.TabIndex = 24;
             // 
             // label24
             // 
@@ -442,18 +474,11 @@ namespace COPOL.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 132);
+            this.label1.Location = new System.Drawing.Point(151, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "дБм";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(33, 129);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(76, 20);
-            this.textBox9.TabIndex = 21;
             // 
             // label18
             // 
@@ -467,7 +492,7 @@ namespace COPOL.Forms
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(115, 84);
+            this.label19.Location = new System.Drawing.Point(151, 86);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(23, 13);
             this.label19.TabIndex = 19;
@@ -476,25 +501,11 @@ namespace COPOL.Forms
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(116, 38);
+            this.label20.Location = new System.Drawing.Point(151, 42);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(24, 13);
             this.label20.TabIndex = 18;
             this.label20.Text = "Ггц";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(33, 81);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(76, 20);
-            this.textBox10.TabIndex = 17;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(33, 35);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(76, 20);
-            this.textBox11.TabIndex = 16;
             // 
             // label21
             // 
@@ -521,7 +532,7 @@ namespace COPOL.Forms
             this.groupBox4.Controls.Add(this.CleanButton);
             this.groupBox4.Location = new System.Drawing.Point(361, 262);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(151, 263);
+            this.groupBox4.Size = new System.Drawing.Size(191, 263);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Действия";
@@ -530,54 +541,67 @@ namespace COPOL.Forms
             // 
             this.SaveButton.Location = new System.Drawing.Point(6, 76);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(140, 47);
+            this.SaveButton.Size = new System.Drawing.Size(179, 47);
             this.SaveButton.TabIndex = 2;
             this.SaveButton.Text = "Сохранить параметры";
             this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.button3_Click);
+            this.SaveButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // OkButton
             // 
             this.OkButton.Location = new System.Drawing.Point(6, 142);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(139, 39);
+            this.OkButton.Size = new System.Drawing.Size(179, 39);
             this.OkButton.TabIndex = 1;
             this.OkButton.Text = "Ок";
             this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.button2_Click);
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // CleanButton
             // 
             this.CleanButton.Location = new System.Drawing.Point(6, 19);
             this.CleanButton.Name = "CleanButton";
-            this.CleanButton.Size = new System.Drawing.Size(139, 39);
+            this.CleanButton.Size = new System.Drawing.Size(179, 39);
             this.CleanButton.TabIndex = 0;
             this.CleanButton.Text = "Очистить";
             this.CleanButton.UseVisualStyleBackColor = true;
+            this.CleanButton.Click += new System.EventHandler(this.CleanButton_Click);
             // 
-            // Form1
+            // InitialDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 535);
+            this.ClientSize = new System.Drawing.Size(564, 535);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "InitialDataForm";
             this.Text = "Исходные данные";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Vds0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Ids0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.gm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Ld)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Ls)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Cgd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Cds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Cgs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.P)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Z)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.N)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.TextBox f;
 
         #endregion
 
@@ -585,27 +609,19 @@ namespace COPOL.Forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -615,21 +631,28 @@ namespace COPOL.Forms
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button CleanButton;
+        private System.Windows.Forms.NumericUpDown Vds0;
+        private System.Windows.Forms.NumericUpDown Ids0;
+        private System.Windows.Forms.NumericUpDown gm;
+        private System.Windows.Forms.NumericUpDown Ld;
+        private System.Windows.Forms.NumericUpDown Ls;
+        private System.Windows.Forms.NumericUpDown Cgd;
+        private System.Windows.Forms.NumericUpDown Cds;
+        private System.Windows.Forms.NumericUpDown Cgs;
+        private System.Windows.Forms.NumericUpDown P;
+        private System.Windows.Forms.NumericUpDown Z;
+        private System.Windows.Forms.NumericUpDown N;
     }
 }
 

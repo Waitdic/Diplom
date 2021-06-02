@@ -199,7 +199,7 @@ namespace COPOL.BLL
         /// <param name="objGraphics"></param>
         /// <param name="nCoord"></param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        private void ConvertCoord(CoordinateType coordType, Graphics objGraphics, ref float nCoord)
+        public void ConvertCoord(CoordinateType coordType, Graphics objGraphics, ref float nCoord)
         {
             var drawRect = objGraphics.VisibleClipBounds;
             switch(coordType)
@@ -272,9 +272,8 @@ namespace COPOL.BLL
         {
             var r = activeR / (float)waveR;
             var x = reactiveR / (float)waveR;
-            var color = Color.MediumPurple;
 
-            var userPen = new Pen(color) { Width = 3 };
+            var userPen = new Pen(Color.MediumPurple) { Width = 3 };
             
             float v;
             double beta;
@@ -297,8 +296,16 @@ namespace COPOL.BLL
             ConvertCoord(CoordinateType.X, objGraphics, ref u);
             ConvertCoord(CoordinateType.Y, objGraphics, ref v);
  
-            //отнимаем 1 чтобы центр эллипса совпадал с серединой искомой точки
+            // отнимаем 1 чтобы центр эллипса совпадал с серединой искомой точки
             objGraphics.DrawEllipse(userPen, u, v, 6, 6);
+        }
+        
+        // переводим координаты пикселей в значения действит. и мнимой частей к-та отражения
+        public void ReverseConvertCoords(Graphics objGraphics, ref float nX, ref float nY)
+        {
+            var drawRect = objGraphics.VisibleClipBounds;
+            nX = (nX / drawRect.Width) * (_xMax - _xMin) + _xMin;
+            nY = -(nY / drawRect.Height) * (_yMax - _yMin) + _yMax;
         }
     }
 }

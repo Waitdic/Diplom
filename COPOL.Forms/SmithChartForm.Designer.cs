@@ -32,9 +32,9 @@ namespace COPOL.Forms
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.ReactiveX = new System.Windows.Forms.NumericUpDown();
+            this.ActiveR = new System.Windows.Forms.NumericUpDown();
+            this.Z = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@ namespace COPOL.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.pMaxOutput = new System.Windows.Forms.NumericUpDown();
             this.Pmax_label = new System.Windows.Forms.Label();
             this.mdB = new System.Windows.Forms.Label();
             this.Pmax = new System.Windows.Forms.Label();
@@ -69,20 +69,20 @@ namespace COPOL.Forms
             this.button4 = new System.Windows.Forms.Button();
             this.SmithChart = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReactiveX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pMaxOutput)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SmithChart)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown3);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.ReactiveX);
+            this.groupBox1.Controls.Add(this.ActiveR);
+            this.groupBox1.Controls.Add(this.Z);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label17);
@@ -110,26 +110,46 @@ namespace COPOL.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Точка";
             // 
-            // numericUpDown3
+            // ReactiveX
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(44, 147);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown3.TabIndex = 31;
+            this.ReactiveX.Location = new System.Drawing.Point(44, 147);
+            this.ReactiveX.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.ReactiveX.Name = "ReactiveX";
+            this.ReactiveX.Size = new System.Drawing.Size(100, 20);
+            this.ReactiveX.TabIndex = 31;
             // 
-            // numericUpDown2
+            // ActiveR
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(43, 94);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(101, 20);
-            this.numericUpDown2.TabIndex = 30;
+            this.ActiveR.Location = new System.Drawing.Point(43, 94);
+            this.ActiveR.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.ActiveR.Name = "ActiveR";
+            this.ActiveR.Size = new System.Drawing.Size(101, 20);
+            this.ActiveR.TabIndex = 30;
             // 
-            // numericUpDown1
+            // Z
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(44, 41);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown1.TabIndex = 29;
+            this.Z.Location = new System.Drawing.Point(44, 41);
+            this.Z.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.Z.Name = "Z";
+            this.Z.Size = new System.Drawing.Size(100, 20);
+            this.Z.TabIndex = 29;
+            this.Z.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // label19
             // 
@@ -224,6 +244,7 @@ namespace COPOL.Forms
             this.DrawUsersPoint.TabIndex = 19;
             this.DrawUsersPoint.Text = "нарисовать точку";
             this.DrawUsersPoint.UseVisualStyleBackColor = true;
+            this.DrawUsersPoint.Click += new System.EventHandler(this.DrawUsersPoint_Click);
             // 
             // label11
             // 
@@ -299,7 +320,7 @@ namespace COPOL.Forms
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.numericUpDown4);
+            this.groupBox2.Controls.Add(this.pMaxOutput);
             this.groupBox2.Controls.Add(this.Pmax_label);
             this.groupBox2.Controls.Add(this.mdB);
             this.groupBox2.Controls.Add(this.Pmax);
@@ -315,12 +336,12 @@ namespace COPOL.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Load-pull";
             // 
-            // numericUpDown4
+            // pMaxOutput
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(63, 179);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(81, 20);
-            this.numericUpDown4.TabIndex = 32;
+            this.pMaxOutput.Location = new System.Drawing.Point(63, 179);
+            this.pMaxOutput.Name = "pMaxOutput";
+            this.pMaxOutput.Size = new System.Drawing.Size(81, 20);
+            this.pMaxOutput.TabIndex = 32;
             // 
             // Pmax_label
             // 
@@ -386,6 +407,7 @@ namespace COPOL.Forms
             this.button2.TabIndex = 10;
             this.button2.Text = "Построить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SetParametersButton
             // 
@@ -453,12 +475,12 @@ namespace COPOL.Forms
             this.Text = "Диаграмма Смита";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReactiveX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pMaxOutput)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SmithChart)).EndInit();
             this.ResumeLayout(false);
@@ -486,9 +508,9 @@ namespace COPOL.Forms
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox SmithChart;
-        private NumericUpDown numericUpDown3;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown ReactiveX;
+        private NumericUpDown ActiveR;
+        private NumericUpDown Z;
         private Label label19;
         private Label label18;
         private Label label17;
@@ -499,7 +521,7 @@ namespace COPOL.Forms
         private Label label14;
         private Label label20;
         private Button DrawUsersPoint;
-        private NumericUpDown numericUpDown4;
+        private NumericUpDown pMaxOutput;
         private Label Pmax_label;
         private Label mdB;
         private Label Pmax;
