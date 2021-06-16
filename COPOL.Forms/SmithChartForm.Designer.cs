@@ -62,11 +62,11 @@ namespace COPOL.Forms
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BuildButton = new System.Windows.Forms.Button();
             this.SetParametersButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.CleanButton = new System.Windows.Forms.Button();
+            this.OpenFileButton = new System.Windows.Forms.Button();
             this.SmithChart = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReactiveX)).BeginInit();
@@ -102,7 +102,7 @@ namespace COPOL.Forms
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(558, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(190, 207);
@@ -119,7 +119,7 @@ namespace COPOL.Forms
             0,
             0});
             this.ReactiveX.Name = "ReactiveX";
-            this.ReactiveX.Size = new System.Drawing.Size(100, 20);
+            this.ReactiveX.Size = new System.Drawing.Size(100, 21);
             this.ReactiveX.TabIndex = 31;
             // 
             // ActiveR
@@ -131,7 +131,7 @@ namespace COPOL.Forms
             0,
             0});
             this.ActiveR.Name = "ActiveR";
-            this.ActiveR.Size = new System.Drawing.Size(101, 20);
+            this.ActiveR.Size = new System.Drawing.Size(101, 21);
             this.ActiveR.TabIndex = 30;
             // 
             // Z
@@ -143,7 +143,7 @@ namespace COPOL.Forms
             0,
             0});
             this.Z.Name = "Z";
-            this.Z.Size = new System.Drawing.Size(100, 20);
+            this.Z.Size = new System.Drawing.Size(100, 21);
             this.Z.TabIndex = 29;
             this.Z.Value = new decimal(new int[] {
             50,
@@ -156,7 +156,7 @@ namespace COPOL.Forms
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(9, 150);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(26, 13);
+            this.label19.Size = new System.Drawing.Size(25, 15);
             this.label19.TabIndex = 28;
             this.label19.Text = "X =";
             // 
@@ -165,7 +165,7 @@ namespace COPOL.Forms
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(10, 97);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(27, 13);
+            this.label18.Size = new System.Drawing.Size(26, 15);
             this.label18.TabIndex = 27;
             this.label18.Text = "R =";
             // 
@@ -174,7 +174,7 @@ namespace COPOL.Forms
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(150, 149);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(25, 13);
+            this.label17.Size = new System.Drawing.Size(25, 15);
             this.label17.TabIndex = 26;
             this.label17.Text = "Ом";
             // 
@@ -183,7 +183,7 @@ namespace COPOL.Forms
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(150, 97);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(25, 13);
+            this.label16.Size = new System.Drawing.Size(25, 15);
             this.label16.TabIndex = 25;
             this.label16.Text = "Ом";
             // 
@@ -192,7 +192,7 @@ namespace COPOL.Forms
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(150, 41);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 13);
+            this.label15.Size = new System.Drawing.Size(25, 15);
             this.label15.TabIndex = 24;
             this.label15.Text = "Ом";
             // 
@@ -201,7 +201,7 @@ namespace COPOL.Forms
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(9, 44);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(33, 13);
+            this.label12.Size = new System.Drawing.Size(31, 15);
             this.label12.TabIndex = 23;
             this.label12.Text = "Zв =";
             // 
@@ -237,7 +237,7 @@ namespace COPOL.Forms
             // 
             // DrawUsersPoint
             // 
-            this.DrawUsersPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DrawUsersPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DrawUsersPoint.Location = new System.Drawing.Point(10, 178);
             this.DrawUsersPoint.Name = "DrawUsersPoint";
             this.DrawUsersPoint.Size = new System.Drawing.Size(174, 23);
@@ -251,7 +251,7 @@ namespace COPOL.Forms
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(126, 150);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.Size = new System.Drawing.Size(0, 15);
             this.label11.TabIndex = 11;
             // 
             // label10
@@ -259,7 +259,7 @@ namespace COPOL.Forms
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(127, 132);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 13);
+            this.label10.Size = new System.Drawing.Size(0, 15);
             this.label10.TabIndex = 10;
             // 
             // label9
@@ -267,7 +267,7 @@ namespace COPOL.Forms
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(128, 65);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.Size = new System.Drawing.Size(0, 15);
             this.label9.TabIndex = 9;
             // 
             // label6
@@ -275,7 +275,7 @@ namespace COPOL.Forms
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(7, 150);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.Size = new System.Drawing.Size(0, 15);
             this.label6.TabIndex = 8;
             // 
             // label5
@@ -283,7 +283,7 @@ namespace COPOL.Forms
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(7, 132);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.Size = new System.Drawing.Size(0, 15);
             this.label5.TabIndex = 6;
             // 
             // label4
@@ -291,7 +291,7 @@ namespace COPOL.Forms
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 15);
             this.label4.TabIndex = 3;
             // 
             // label3
@@ -299,7 +299,7 @@ namespace COPOL.Forms
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 15);
             this.label3.TabIndex = 2;
             // 
             // label2
@@ -307,7 +307,7 @@ namespace COPOL.Forms
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 1;
             // 
             // label1
@@ -315,7 +315,7 @@ namespace COPOL.Forms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 15);
             this.label1.TabIndex = 0;
             // 
             // groupBox2
@@ -327,7 +327,7 @@ namespace COPOL.Forms
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.BuildButton);
             this.groupBox2.Controls.Add(this.SetParametersButton);
             this.groupBox2.Location = new System.Drawing.Point(558, 220);
             this.groupBox2.Name = "groupBox2";
@@ -338,7 +338,7 @@ namespace COPOL.Forms
             // 
             // pMaxOutput
             // 
-            this.pMaxOutput.Location = new System.Drawing.Point(63, 179);
+            this.pMaxOutput.Location = new System.Drawing.Point(63, 184);
             this.pMaxOutput.Name = "pMaxOutput";
             this.pMaxOutput.Size = new System.Drawing.Size(81, 20);
             this.pMaxOutput.TabIndex = 32;
@@ -357,20 +357,20 @@ namespace COPOL.Forms
             // mdB
             // 
             this.mdB.AutoSize = true;
-            this.mdB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mdB.Location = new System.Drawing.Point(150, 179);
+            this.mdB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mdB.Location = new System.Drawing.Point(150, 184);
             this.mdB.Name = "mdB";
-            this.mdB.Size = new System.Drawing.Size(34, 15);
+            this.mdB.Size = new System.Drawing.Size(31, 15);
             this.mdB.TabIndex = 28;
             this.mdB.Text = "дБм";
             // 
             // Pmax
             // 
             this.Pmax.AutoSize = true;
-            this.Pmax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Pmax.Location = new System.Drawing.Point(8, 181);
+            this.Pmax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Pmax.Location = new System.Drawing.Point(10, 184);
             this.Pmax.Name = "Pmax";
-            this.Pmax.Size = new System.Drawing.Size(59, 15);
+            this.Pmax.Size = new System.Drawing.Size(52, 15);
             this.Pmax.TabIndex = 27;
             this.Pmax.Text = "Pmax = ";
             // 
@@ -399,15 +399,15 @@ namespace COPOL.Forms
             this.button3.Text = "Сохранить точки";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BuildButton
             // 
-            this.button2.Location = new System.Drawing.Point(11, 69);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 31);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Построить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.BuildButton.Location = new System.Drawing.Point(11, 69);
+            this.BuildButton.Name = "BuildButton";
+            this.BuildButton.Size = new System.Drawing.Size(174, 31);
+            this.BuildButton.TabIndex = 10;
+            this.BuildButton.Text = "Построить";
+            this.BuildButton.UseVisualStyleBackColor = true;
+            this.BuildButton.Click += new System.EventHandler(this.BuildButton_Click);
             // 
             // SetParametersButton
             // 
@@ -422,8 +422,8 @@ namespace COPOL.Forms
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.CleanButton);
+            this.groupBox3.Controls.Add(this.OpenFileButton);
             this.groupBox3.Location = new System.Drawing.Point(558, 443);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(190, 104);
@@ -431,23 +431,25 @@ namespace COPOL.Forms
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Действия";
             // 
-            // button5
+            // CleanButton
             // 
-            this.button5.Location = new System.Drawing.Point(10, 56);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(174, 31);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Очистить";
-            this.button5.UseVisualStyleBackColor = true;
+            this.CleanButton.Location = new System.Drawing.Point(10, 56);
+            this.CleanButton.Name = "CleanButton";
+            this.CleanButton.Size = new System.Drawing.Size(174, 31);
+            this.CleanButton.TabIndex = 13;
+            this.CleanButton.Text = "Очистить";
+            this.CleanButton.UseVisualStyleBackColor = true;
+            this.CleanButton.Click += new System.EventHandler(this.CleanButton_Click);
             // 
-            // button4
+            // OpenFileButton
             // 
-            this.button4.Location = new System.Drawing.Point(10, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 31);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Открыть файл";
-            this.button4.UseVisualStyleBackColor = true;
+            this.OpenFileButton.Location = new System.Drawing.Point(10, 19);
+            this.OpenFileButton.Name = "OpenFileButton";
+            this.OpenFileButton.Size = new System.Drawing.Size(175, 31);
+            this.OpenFileButton.TabIndex = 12;
+            this.OpenFileButton.Text = "Открыть файл";
+            this.OpenFileButton.UseVisualStyleBackColor = true;
+            this.OpenFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
             // SmithChart
             // 
@@ -502,11 +504,11 @@ namespace COPOL.Forms
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BuildButton;
         private System.Windows.Forms.Button SetParametersButton;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button CleanButton;
+        private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.PictureBox SmithChart;
         private NumericUpDown ReactiveX;
         private NumericUpDown ActiveR;

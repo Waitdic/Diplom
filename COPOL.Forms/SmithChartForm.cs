@@ -9,8 +9,8 @@ namespace COPOL.Forms
     public partial class DiagrammForm : Form
     {
         private readonly SmithChart _smithChart = new SmithChart();
-        private Parameters _parameters;
-            
+        private Parameters _parameters = new Parameters();
+
         // Центры горизонтальных окружностей. 
         private static readonly float[] BaseArg1 = {
             0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f,
@@ -38,7 +38,7 @@ namespace COPOL.Forms
         
         private void SetParametersButton_Click(object sender, EventArgs e)
         {
-            var dataForm = new InitialDataForm() { Visible = true};
+            var dataForm = new InitialDataForm {Visible = true};
             dataForm.SetParameters(_parameters);
         }
 
@@ -106,7 +106,7 @@ namespace COPOL.Forms
             //btnBack.Enabled = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BuildButton_Click(object sender, EventArgs e)
         {
             //if (OpenFileButtonPressed == false)
             //    TableOfContoursFromFile = null;
@@ -115,14 +115,17 @@ namespace COPOL.Forms
             //btnBack.Enabled = true;
 
             //задание входных параметров транзистора
-            /* float Vds0 = (float)this.Vds0;
-            float Ids0 = (float)(this.Ids0 * System.Math.Pow(10, -3));
-            float Cgs = (float)(this.Cgs * System.Math.Pow(10, -12));
-            float Cds = (float)(this.Cds * System.Math.Pow(10, -12));
-            float Cgd = (float)(this.Cgd * System.Math.Pow(10, -12));
-            float Ls = (float)(this.Ls * System.Math.Pow(10, -9));
-            float Ld = (float)(this.Ld * System.Math.Pow(10, -9));
-            float gm = (float)(this.Gm * System.Math.Pow(10, -3)); */
+            var parameters = new Parameters();
+
+            parameters.Vds0 = _parameters.Vds0;
+            parameters.Ids0 = (float)(_parameters.Ids0 * Math.Pow(10, -3));
+            parameters.Cgs = (float)(_parameters.Cgs * Math.Pow(10, -12));
+            parameters.Cds = (float)(_parameters.Cds * Math.Pow(10, -12));
+            parameters.Cgd = (float)(_parameters.Cgd * Math.Pow(10, -12));
+            parameters.Ls = (float)(_parameters.Ls * Math.Pow(10, -9));
+            parameters.Ld = (float)(_parameters.Ld * Math.Pow(10, -9));
+            parameters.Gm = (float)(_parameters.Gm * Math.Pow(10, -3));
+            parameters.Frequences = _parameters.Frequences;
 
             if (_parameters == null)
             {
@@ -132,12 +135,12 @@ namespace COPOL.Forms
             // Создаем объект класса LoadPull и передаем параметры для расчета.
             var z0 = Z.Value == 0 ? 50 : (float) Z.Value;
             var builder = new LoadPull(
-                _parameters,
+                parameters,
                 z0);
 
             // Рассчитываем точки контуров. 
             var outputPoint = builder.CalculatePoint();
-            Pmax.Text = Math.Round(builder.PMaxOutput, 2).ToString();
+            pMaxOutput.Value = (decimal)Math.Round(builder.PMaxOutput, 2);
             
             // Рисуем контура.
             DrawManager.DrawContours(
@@ -200,6 +203,16 @@ namespace COPOL.Forms
             {
                 btnBack.Enabled = true;
             }*/
+        }
+
+        private void CleanButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenFileButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

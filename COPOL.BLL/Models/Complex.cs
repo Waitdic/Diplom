@@ -57,7 +57,7 @@ namespace COPOL.BLL.Models
         
         public static Complex Sqrt(Complex c)
         {
-            double abs = Math.Sqrt(c.Abs);
+            var abs = Math.Sqrt(c.Abs);
             return new Complex(abs * Math.Cos(c.Arg / 2), abs * Math.Sin(c.Arg / 2));
         }
         
@@ -75,7 +75,7 @@ namespace COPOL.BLL.Models
         {
             get
             {
-                double res = Math.Atan2(imaginary, real);
+                var res = Math.Atan2(imaginary, real);
                 return res;
             }
         }

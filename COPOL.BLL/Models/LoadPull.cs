@@ -15,9 +15,10 @@ namespace COPOL.BLL.Models
         private const float Rd = 2f;
 
         private float Z0;
-        
+        private Hashtable _zOpt = new Hashtable();
+
         public float PMaxOutput { get; private set; }
-        public Hashtable ZOpt { get; private set; }
+        public Hashtable ZOpt { get => _zOpt; private set => _zOpt = value; }
 
         public LoadPull(Parameters parameters, float z0)
         {

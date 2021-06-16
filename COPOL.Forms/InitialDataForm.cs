@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using COPOL.BLL.Models;
 
@@ -15,14 +17,10 @@ namespace COPOL.Forms
 
         public void SetParameters(Parameters parameters)
         {
-            if (parameters != null)
-            {
-                SetValueToForm(parameters);
-            }
-
+            
+            SetValueToForm(parameters);
             _parameters = parameters;
         }
-
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
@@ -45,7 +43,7 @@ namespace COPOL.Forms
             _parameters.Difference = (float) Z.Value;
             _parameters.POfContour = (float) P.Value;
 
-            
+            _parameters.Frequences = GetFrequencesFromString();
 
             this.Close();
             this.Dispose();
@@ -53,7 +51,7 @@ namespace COPOL.Forms
 
         private void SetValueToForm(Parameters parameters)
         {
-            N.Value = (decimal)parameters.N;
+            N.Value = parameters.N;
             Z.Value = (decimal)parameters.Difference;
             P.Value = (decimal)parameters.POfContour;
 
@@ -66,6 +64,34 @@ namespace COPOL.Forms
             Ls.Value = (decimal)parameters.Ls;
             Ld.Value = (decimal)parameters.Ld;
             gm.Value = (decimal)parameters.Gm;
+
+            f.Text = ConvertFrequencesFromListToString(parameters.Frequences);
+        }
+
+        private List<float> GetFrequencesFromString()
+        {
+            return !string.IsNullOrWhiteSpace(f.Text) ? f.Text
+                .Replace('.', ',')
+                .Split(';')
+                .Select(float.Parse)
+                .ToList() : new List<float>();
+        }
+
+        private string ConvertFrequencesFromListToString(IEnumerable<float> frequences)
+        {
+            var newString = "";
+            if (frequences != null)
+            {
+                var list = frequences.Select(x => x + "; ");
+                newString = list.Aggregate("", (current, value) => current + value);
+            }
+
+            return newString.TrimEnd(new char[] {';', ' '});
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -75,7 +75,7 @@ namespace COPOL.BLL.Models
                 smithСhart.ReverseConvertCoords(graphics, ref U_coord, ref V_coord);
                 smithСhart.ReverseConvertCoords(graphics, ref textCoord_x, ref textCoord_y);
 
-                if (CheckInsideCircle(U_coord, V_coord) == true)
+                if (CheckInsideCircle(U_coord, V_coord))
                 {
                     //рисуем точку оптимальной нагрузки
                     graphics.DrawEllipse(penBlue, Z_opt_x, Z_opt_y, 3, 3);

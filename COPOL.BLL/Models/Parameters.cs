@@ -4,13 +4,39 @@ namespace COPOL.BLL.Models
 {
     public class Parameters
     {
+        private List<float> _frequences { get; set; }
+        private int _n { get; set; }
+        private float _difference { get; set; }
+
+        //параметры транзистора
+        private float _cgs { get; set; }
+        private float _cds { get; set; }
+        private float _cgd { get; set; }
+        private float _ls { get; set; }
+        private float _ld { get; set; }
+        private float _gm { get; set; }
+
+        //рабочая точка
+        private float _vds0 { get; set; }
+        private float _ids0 { get; set; }
+        private float _pOfContour { get; set; }
+
         //структура для передачи параметров между модулем и основной программой
         public List<float> Frequences { get; set; }
         public int N { get; set; }
         public float Difference { get; set; }
         
         //параметры транзистора
-        public float Cgs { get; set; }
+        public float Cgs
+        {
+            get => _cgs;
+            set
+            {
+                _cgs = value;
+            }
+            
+        }
+
         public float Cds { get; set; }
         public float Cgd { get; set; }
         public float Ls { get; set; }
