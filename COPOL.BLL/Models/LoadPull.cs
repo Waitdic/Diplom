@@ -50,13 +50,14 @@ namespace COPOL.BLL.Models
                 }
 
                 // Падение в dBm на каждом контуре.
-                var downgrade = differenceFromPToPmax;
+                var step = differenceFromPToPmax;
                 
                 // Цикл для каждого контура.
                 for (var i = 0; i < _parameters.N; i++)
                 {
+                    // TODO : странный расчет для каждого шага.
                     //рассчитываем мощность для каждого контура
-                    var pOutDBm = pMaxDBm - downgrade;
+                    var pOutDBm = pMaxDBm - step;
                     
                     var p = (float) (pMax / Math.Pow(10, ((pMaxDBm - pOutDBm) / 10)));
                     
@@ -80,7 +81,7 @@ namespace COPOL.BLL.Models
                             .AddRange(pointsOfOldContours
                                 .Select(point => CalculatePointsOfNewContours(point, frequence)));
 
-                        downgrade += differenceFromPToPmax;
+                        step += differenceFromPToPmax;
                     }
                     else
                     {
@@ -99,7 +100,7 @@ namespace COPOL.BLL.Models
                     }
                     catch
                     {
-                        throw new ArgumentException("шибка при заполнении массива данных", "Ошибка");
+                        throw new ArgumentException("Ошибка при заполнении массива данных", "Ошибка");
                     }
                 }
             }
