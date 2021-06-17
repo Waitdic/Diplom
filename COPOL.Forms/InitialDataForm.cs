@@ -70,11 +70,14 @@ namespace COPOL.Forms
 
         private List<float> GetFrequencesFromString()
         {
-            return !string.IsNullOrWhiteSpace(f.Text) ? f.Text
+            return !string.IsNullOrWhiteSpace(f.Text) 
+                ? f.Text
                 .Replace('.', ',')
                 .Split(';')
                 .Select(float.Parse)
-                .ToList() : new List<float>();
+                .Select(x => (float)(x * Math.Pow(10, 9)))
+                .ToList() 
+                : new List<float>();
         }
 
         private string ConvertFrequencesFromListToString(IEnumerable<float> frequences)

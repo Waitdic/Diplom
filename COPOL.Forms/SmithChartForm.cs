@@ -13,16 +13,16 @@ namespace COPOL.Forms
 
         // Центры горизонтальных окружностей. 
         private static readonly float[] BaseArg1 = {
-            0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f,
-            0.8f, 0.9f, 1.0f, 1.2f, 1.4f, 1.6f, 1.8f, 
-            2.0f, 3.0f, 4.0f, 5.0f, 10.0f, 20.0f, 50.0f 
+            0.0f, 0.2f, 0.4f, 0.6f,
+            0.8f, 1.0f, 1.4f, 1.8f, 
+            2.2f, 3.0f, 4.0f, 5.0f, 10.0f
         };
         
         // Центры Вертикальных окружностей. 
         private static readonly float[] BaseArg2 = { 
             0.2f, 0.4f, 0.6f, 0.8f, 1.0f,
-            1.2f, 1.4f, 1.6f, 1.8f, 2.0f,
-            3.0f, 4.0f, 5.0f, 10.0f, 20.0f, 50.0f 
+            1.2f, 1.4f, 1.6f, 1.9f, 2.3f,
+            3.0f, 4.0f, 5.0f, 10.0f
         };
 
         private float[] _arg1 = BaseArg1;
@@ -114,23 +114,27 @@ namespace COPOL.Forms
             //PmaxOutput.Visible = true;
             //btnBack.Enabled = true;
 
-            //задание входных параметров транзистора
-            var parameters = new Parameters();
-
-            parameters.Vds0 = _parameters.Vds0;
-            parameters.Ids0 = (float)(_parameters.Ids0 * Math.Pow(10, -3));
-            parameters.Cgs = (float)(_parameters.Cgs * Math.Pow(10, -12));
-            parameters.Cds = (float)(_parameters.Cds * Math.Pow(10, -12));
-            parameters.Cgd = (float)(_parameters.Cgd * Math.Pow(10, -12));
-            parameters.Ls = (float)(_parameters.Ls * Math.Pow(10, -9));
-            parameters.Ld = (float)(_parameters.Ld * Math.Pow(10, -9));
-            parameters.Gm = (float)(_parameters.Gm * Math.Pow(10, -3));
-            parameters.Frequences = _parameters.Frequences;
-
             if (_parameters == null)
             {
                 return;
             }
+            
+            //задание входных параметров транзистора
+            var parameters = new Parameters
+            {
+                Vds0 = _parameters.Vds0,
+                Ids0 = (float) (_parameters.Ids0 * Math.Pow(10, -3)),
+                Cgs = (float) (_parameters.Cgs * Math.Pow(10, -12)),
+                Cds = (float) (_parameters.Cds * Math.Pow(10, -12)),
+                Cgd = (float) (_parameters.Cgd * Math.Pow(10, -12)),
+                Ls = (float) (_parameters.Ls * Math.Pow(10, -9)),
+                Ld = (float) (_parameters.Ld * Math.Pow(10, -9)),
+                Gm = (float) (_parameters.Gm * Math.Pow(10, -3)),
+                Frequences = _parameters.Frequences,
+                POfContour = _parameters.POfContour,
+                N = _parameters.N,
+                Difference = _parameters.Difference,
+            };
 
             // Создаем объект класса LoadPull и передаем параметры для расчета.
             var z0 = Z.Value == 0 ? 50 : (float) Z.Value;
