@@ -9,7 +9,7 @@ namespace COPOL.Forms
     public partial class DiagrammForm : Form
     {
         private readonly SmithChart _smithChart = new SmithChart();
-        private Parameters _parameters = new Parameters();
+        private Parameters _parameters;
 
         // Центры горизонтальных окружностей. 
         private static readonly float[] BaseArg1 = {
@@ -38,6 +38,11 @@ namespace COPOL.Forms
         
         private void SetParametersButton_Click(object sender, EventArgs e)
         {
+            if (_parameters == null)
+            {
+                _parameters = new Parameters();
+            }
+            
             var dataForm = new InitialDataForm {Visible = true};
             dataForm.SetParameters(_parameters);
         }
@@ -108,77 +113,54 @@ namespace COPOL.Forms
 
         private void BuildButton_Click(object sender, EventArgs e)
         {
-            //if (OpenFileButtonPressed == false)
-            //    TableOfContoursFromFile = null;
-            //SavePointsButton.Enabled = true;
-            //PmaxOutput.Visible = true;
-            //btnBack.Enabled = true;
-
             if (_parameters == null)
             {
+                MessageBox.Show("Параметры для транзистора не были заполнены.", "Ошибка!");
                 return;
             }
-            
-            //задание входных параметров транзистора
-            var parameters = new Parameters
+
+            try
             {
-                Vds0 = _parameters.Vds0,
-                Ids0 = (float) (_parameters.Ids0 * Math.Pow(10, -3)),
-                Cgs = (float) (_parameters.Cgs * Math.Pow(10, -12)),
-                Cds = (float) (_parameters.Cds * Math.Pow(10, -12)),
-                Cgd = (float) (_parameters.Cgd * Math.Pow(10, -12)),
-                Ls = (float) (_parameters.Ls * Math.Pow(10, -9)),
-                Ld = (float) (_parameters.Ld * Math.Pow(10, -9)),
-                Gm = (float) (_parameters.Gm * Math.Pow(10, -3)),
-                Frequences = _parameters.Frequences,
-                POfContour = _parameters.POfContour,
-                N = _parameters.N,
-                Difference = _parameters.Difference,
-            };
+                //задание входных параметров транзистора
+                var parameters = new Parameters
+                {
+                    Vds0 = _parameters.Vds0,
+                    Ids0 = (float) (_parameters.Ids0 * Math.Pow(10, -3)),
+                    Cgs = (float) (_parameters.Cgs * Math.Pow(10, -12)),
+                    Cds = (float) (_parameters.Cds * Math.Pow(10, -12)),
+                    Cgd = (float) (_parameters.Cgd * Math.Pow(10, -12)),
+                    Ls = (float) (_parameters.Ls * Math.Pow(10, -9)),
+                    Ld = (float) (_parameters.Ld * Math.Pow(10, -9)),
+                    Gm = (float) (_parameters.Gm * Math.Pow(10, -3)),
+                    Frequences = _parameters.Frequences,
+                    LoopP = _parameters.LoopP,
+                    N = _parameters.N,
+                    Step = _parameters.Step,
+                };
 
-            // Создаем объект класса LoadPull и передаем параметры для расчета.
-            var z0 = Z.Value == 0 ? 50 : (float) Z.Value;
-            var builder = new LoadPull(
-                parameters,
-                z0);
+                // Создаем объект класса LoadPull и передаем параметры для расчета.
+                var z0 = Z.Value == 0 ? 50 : (float) Z.Value;
+                var builder = new LoadPull(
+                    parameters,
+                    z0);
 
-            // Рассчитываем точки контуров. 
-            var outputPoint = builder.CalculatePoint();
-            pMaxOutput.Value = (decimal)Math.Round(builder.PMaxOutput, 2);
+                // Рассчитываем точки контуров. 
+                var outputPoint = builder.CalculatePoint();
+                pMaxOutput.Value = (decimal)Math.Round(builder.PMaxOutput, 2);
             
-            // Рисуем контура.
-            DrawManager.DrawContours(
-                outputPoint,
-                this.SmithChart.CreateGraphics(),
-                _smithChart,
-                builder,
-                z0);
-
-            /*if ((_parameters.Difference == 0) || (valueWaveR == 50))//проверяем значение волнового сопротивления
-            {
-                //создание объекта класса, вычисляющего точки контуров мощности
-                MyDataClass = new LoadPullData(Vds0, Ids0, Cgs, Cds, Cgd, Ls, Ld, gm, default_Z0);
+                // Рисуем контура.
+                DrawManager.DrawContours(
+                    outputPoint,
+                    this.SmithChart.CreateGraphics(),
+                    _smithChart,
+                    builder,
+                    z0);
             }
-            else //создание объекта класса, вычисляющего точки контуров мощности
-                MyDataClass = new LoadPullData(Vds0, Ids0, Cgs, Cds, Cgd, Ls, Ld, gm, valueWaveR);*/
-
-
-            //массив частот 
-            /*var frequences = new List<float>();
-            frequences = this.Frequences;
-            int n = this.n; //требуемое число контуров
-            float difference = this.difference;//падение мощности
-            float P = this.P;//требуемая мощность контура
-
-            //рассчитываем точки контуров
-            if (OpenFileButtonPressed == false)//если кнопка "открыть файл" не нажималась 
+            catch (Exception ex)
             {
-                var output = builder.CalculatePoint(n, difference, frequences, P);
-
-                //рисуем контуры
-
-                DrawContours(output);
-            }*/
+                MessageBox.Show(ex.Message, "Ошибка.");
+            }
+            
         }
 
         private void DrawUsersPoint_Click(object sender, EventArgs e)

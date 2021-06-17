@@ -43,10 +43,10 @@ namespace COPOL.BLL.Models
                 var pMaxDBm = (float)(10 * Math.Log10((1000 * pMax)));
                 PMaxOutput = pMaxDBm;
 
-                var differenceFromPToPmax = _parameters.Difference;
+                var differenceFromPToPmax = _parameters.Step;
                 if (differenceFromPToPmax == 0)
                 {
-                    differenceFromPToPmax = pMaxDBm - _parameters.POfContour;
+                    differenceFromPToPmax = pMaxDBm - _parameters.LoopP;
                 }
 
                 // Падение в dBm на каждом контуре.

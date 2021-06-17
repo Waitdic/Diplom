@@ -37,16 +37,17 @@ namespace COPOL.BLL.Models
                     // Переводим в экранные координаты.
                     smithСhart.ConvertCoord(CoordinateType.X, graphics, ref x);
                     smithСhart.ConvertCoord(CoordinateType.Y, graphics, ref y);
-                    var U_coord = x;
-                    var V_coord = y;
+                    var uCoord = x;
+                    var vCoord = y;
 
                     // Смещение текста относительно точки контура.
-                    var freq_x = x + 3;
-                    var freq_y = y - 3;
+                    var freqX = x + 3;
+                    var freqY = y - 3;
 
-                    smithСhart.ReverseConvertCoords(graphics, ref U_coord, ref V_coord);
-                    smithСhart.ReverseConvertCoords(graphics, ref freq_x, ref freq_y);
-                    if (CheckInsideCircle(U_coord, V_coord) == true)
+                    smithСhart.ReverseConvertCoords(graphics, ref uCoord, ref vCoord);
+                    smithСhart.ReverseConvertCoords(graphics, ref freqX, ref freqY);
+                    
+                    if (CheckInsideCircle(uCoord, vCoord))
                     {
                         // Рисуем точку контура.
                         graphics.DrawEllipse(penRed, x, y, 2, 2);
@@ -57,35 +58,43 @@ namespace COPOL.BLL.Models
             // Рисуем точки оптимальной нагрузки.
             foreach (DictionaryEntry i in loadPull.ZOpt)
             {
-                var Z_opt_gamma = (((Complex)(i.Value)) - z00) / (((Complex)(i.Value)) + z00);
+                var zOptGamma = (((Complex)(i.Value)) - z00) / (((Complex)(i.Value)) + z00);
 
-                var Z_opt_x = (float)Z_opt_gamma.real;
-                var Z_opt_y = (float)Z_opt_gamma.imaginary;
+                var zOptX = (float)zOptGamma.real;
+                var zOptY = (float)zOptGamma.imaginary;
                 
                 //переводим в экранные координаты
-                smithСhart.ConvertCoord(CoordinateType.X, graphics, ref Z_opt_x);
-                smithСhart.ConvertCoord(CoordinateType.Y, graphics, ref Z_opt_y);
+                smithСhart.ConvertCoord(CoordinateType.X, graphics, ref zOptX);
+                smithСhart.ConvertCoord(CoordinateType.Y, graphics, ref zOptY);
 
-                var textCoord_x = Z_opt_x + 8;//для вывода частоты около точки оптимальной нагрузки
-                var textCoord_y = Z_opt_y - 8;
+                var textCoordX = zOptX + 8;//для вывода частоты около точки оптимальной нагрузки
+                var textCoordY = zOptY - 8;
 
 
-                var U_coord = Z_opt_x;
-                var V_coord = Z_opt_y;
-                smithСhart.ReverseConvertCoords(graphics, ref U_coord, ref V_coord);
-                smithСhart.ReverseConvertCoords(graphics, ref textCoord_x, ref textCoord_y);
+                var uCoord = zOptX;
+                var vCoord = zOptY;
+                smithСhart.ReverseConvertCoords(graphics, ref uCoord, ref vCoord);
+                smithСhart.ReverseConvertCoords(graphics, ref textCoordX, ref textCoordY);
 
-                if (CheckInsideCircle(U_coord, V_coord))
+                if (CheckInsideCircle(uCoord, vCoord))
                 {
                     //рисуем точку оптимальной нагрузки
-                    graphics.DrawEllipse(penBlue, Z_opt_x, Z_opt_y, 3, 3);
+                    graphics.DrawEllipse(penBlue, zOptX, zOptY, 3, 3);
                     var text = (string)i.Key;//частота
                     text = text.Remove(0, 4);//чтобы осталось только значение частоты
                     
                     //выводим значение частоты рядом с точкой оптимальной нагрузки
-                    smithСhart.DrawText(graphics, Color.Green,new Font("Arial",8,FontStyle.Bold), text, textCoord_x, textCoord_y);
+                    smithСhart.DrawText(
+                        graphics,
+                        Color.Green
+                        ,new Font(
+                            "Arial",
+                            8,
+                            FontStyle.Bold),
+                        text,
+                        textCoordX,
+                        textCoordY);
                 }
-                
             }
         }
 

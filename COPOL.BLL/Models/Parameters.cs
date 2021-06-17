@@ -1,57 +1,149 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace COPOL.BLL.Models
 {
     public class Parameters
     {
-        private List<float> _frequences { get; set; }
-        private int _n { get; set; }
-        private float _difference { get; set; }
+        // Параметры контуров.
+        private List<float> _frequences;
+        private int _n;
+        private float _step;
 
-        //параметры транзистора
-        private float _cgs { get; set; }
-        private float _cds { get; set; }
-        private float _cgd { get; set; }
-        private float _ls { get; set; }
-        private float _ld { get; set; }
-        private float _gm { get; set; }
+        // Параметры транзистора.
+        private float _cgs;
+        private float _cds;
+        private float _cgd; 
+        private float _ls; 
+        private float _ld; 
+        private float _gm; 
 
-        //рабочая точка
-        private float _vds0 { get; set; }
-        private float _ids0 { get; set; }
-        private float _pOfContour { get; set; }
-
-        //структура для передачи параметров между модулем и основной программой
-        public List<float> Frequences { get; set; }
-        public int N { get; set; }
-        public float Difference { get; set; }
+        // Рабочая точка.
+        private float _vds0; 
+        private float _ids0; 
+        private float _loopP; 
         
-        //параметры транзистора
+        public List<float> Frequences
+        {
+            get => _frequences;
+            set
+            {
+                value.ForEach(x => ValidateValue(x, "Частота"));
+                _frequences = value;
+            }
+        }
+        
+        public int N
+        {
+            get => _n;
+            set
+            {
+                ValidateValue(value, "N");
+                _n = value;
+            }
+        }
+        
+        public float Step
+        {
+            get => _step;
+            set
+            {
+                ValidateValue(value, "Step");
+                _step = value;
+            }
+        }
+        
         public float Cgs
         {
             get => _cgs;
             set
             {
+                ValidateValue(value, "Cgs");
                 _cgs = value;
             }
-            
         }
 
-        public float Cds { get; set; }
-        public float Cgd { get; set; }
-        public float Ls { get; set; }
-        public float Ld { get; set; }
-        public float Gm { get; set; }
-
-        //рабочая точка
-        public float Vds0 { get; set; }
-        public float Ids0 { get; set; }
-        public float POfContour { get; set; }
+        public float Cds 
+        {
+            get => _cds;
+            set
+            {
+                ValidateValue(value, "Cds");
+                _cds = value;
+            }
+        }
+        
+        public float Cgd
+        {
+            get => _cgd;
+            set
+            {
+                ValidateValue(value, "Cgd");
+                _cgd = value;
+            }
+        }
+        
+        public float Ls 
+        {
+            get => _ls;
+            set
+            {
+                ValidateValue(value, "Ls");
+                _ls = value;
+            }
+        }
+        
+        public float Ld 
+        {
+            get => _ld;
+            set
+            {
+                ValidateValue(value, "Ld");
+                _ld = value;
+            }
+        }
+        
+        public float Gm 
+        {
+            get => _gm;
+            set
+            {
+                ValidateValue(value, "Gm");
+                _gm = value;
+            }
+        }
+        
+        public float Vds0  {
+            get => _vds0;
+            set
+            {
+                ValidateValue(value, "Vds0");
+                _vds0 = value;
+            }
+        }
+        public float Ids0  {
+            get => _ids0;
+            set
+            {
+                ValidateValue(value, "Ids0");
+                _ids0 = value;
+            }
+        }
+        
+        public float LoopP
+        {
+            get => _loopP;
+            set
+            {
+                ValidateValue(value, "P");
+                _loopP = value;
+            }
+        }
 
         public Parameters()
         {
             N = 0;
-            Difference = 0;
+            Step = 0;
             Cgs = 0;
             Cds = 0;
             Cgd = 0;
@@ -60,7 +152,20 @@ namespace COPOL.BLL.Models
             Gm = 0;
             Vds0 = 0;
             Ids0 = 0;
-            POfContour = 0;
+            LoopP = 0;
+        }
+        
+        /// <summary>
+        /// Проверка присваиваемого значения.
+        /// </summary>
+        /// <param name="value">Присваиваемая переменная.</param>
+        /// <param name="name">Имя параметра.</param>
+        private static void ValidateValue(double value, string name)
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException($"{name} не может быть меньше или равна нулю!");
+            }
         }
     }
 }

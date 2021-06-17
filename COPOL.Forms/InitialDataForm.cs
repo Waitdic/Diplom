@@ -40,8 +40,8 @@ namespace COPOL.Forms
             _parameters.Gm = (float) gm.Value;
 
             _parameters.N = (int) N.Value;
-            _parameters.Difference = (float) Z.Value;
-            _parameters.POfContour = (float) P.Value;
+            _parameters.Step = (float) Z.Value;
+            _parameters.LoopP = (float) P.Value;
 
             _parameters.Frequences = GetFrequencesFromString();
 
@@ -52,8 +52,8 @@ namespace COPOL.Forms
         private void SetValueToForm(Parameters parameters)
         {
             N.Value = parameters.N;
-            Z.Value = (decimal)parameters.Difference;
-            P.Value = (decimal)parameters.POfContour;
+            Z.Value = (decimal)parameters.Step;
+            P.Value = (decimal)parameters.LoopP;
 
             Vds0.Value = (decimal)parameters.Vds0;
             Ids0.Value = (decimal)parameters.Ids0;

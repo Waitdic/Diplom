@@ -9,55 +9,22 @@ namespace COPOL.BLL
     /// </summary>
     public class SmithChart
     {
-        private float _yMax = 1;        // граничная точка справа по оси x (для смены масштаба)
-        private float _xMax = 1;        // граничная точка сверху по оси y (для смены масштаба)
+        /// <summary>Максимальное значение y на диаграмме.</summary>
+        /// <remarks>Граничная точка справа по оси x (для смены масштаба).</remarks>
+        private float _yMax = 1;        
+        
+        /// <summary>Максимальное значения x на диаграмме.</summary>
+        /// <remarks>Граничная точка сверху по оси y (для смены масштаба).</remarks>
+        private float _xMax = 1;   
+        
+        /// <summary>Минимального значения x на диаграмме.</summary>
         private float _xMin = -1;
+        
+        /// <summary>Минимального значения y на диаграмме.</summary>
         private float _yMin = -1;
-        private int _mnAxesCount = 1;   // кол-во осей в сетке координат (по умолчанию по одной оси для x и y)
         
-        /// <summary>
-        /// Максимальное значения x на диаграмме
-        /// </summary>
-        public float Xmax
-        {
-            get => _xMax;
-            set => _xMax = value;
-        }
-        
-        /// <summary>
-        /// Свойство для максимального значения y на диаграмме.
-        /// </summary>
-        public float Ymax
-        {
-            get => _yMax; 
-            set => _yMax = value;
-        }
-        
-        /// <summary>
-        /// Свойство для минимального значения x на диаграмме.
-        /// </summary>
-        public float Xmin
-        {
-            get => _xMin; 
-            set => _xMin = value; 
-        }
-        
-        /// <summary>
-        /// Свойство для минимального значения y на диаграмме.
-        /// </summary>
-        public float Ymin
-        {
-            get => _yMin; 
-            set => _yMin = value; 
-        }
-
-        /// <summary>
-        /// Максимальное значения x на диаграмме
-        /// </summary>
-        public int AxesCount
-        {
-            set => _mnAxesCount = value; 
-        }
+        /// <summary>Rол-во осей в сетке координат (по умолчанию по одной оси для x и y).</summary>
+        private int _mnAxesCount = 1;
 
         // TODO : Возможно исключить данный метод.
         /*/// <summary>
@@ -287,7 +254,7 @@ namespace COPOL.BLL
             else 
             {
                 beta = Math.PI - 2 * Math.Abs(angle);
-                v = -(float)(System.Math.Sin(beta) / (1 + r));
+                v = -(float)(Math.Sin(beta) / (1 + r));
             }
             
             var u = (float)(Math.Cos(beta) / (1 + r));
