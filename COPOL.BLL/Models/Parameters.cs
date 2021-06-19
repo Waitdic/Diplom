@@ -142,17 +142,17 @@ namespace COPOL.BLL.Models
 
         public Parameters()
         {
-            N = 0;
-            Step = 0;
-            Cgs = 0;
-            Cds = 0;
-            Cgd = 0;
-            Ls = 0;
-            Ld = 0;
-            Gm = 0;
-            Vds0 = 0;
-            Ids0 = 0;
-            LoopP = 0;
+            _n = 0;
+            _step = 0;
+            _cgs = 0;
+            _cds = 0;
+            _cgd = 0;
+            _ls = 0;
+            _ld = 0;
+            _gm = 0;
+            _vds0 = 0;
+            _ids0 = 0;
+            _loopP = 0;
         }
         
         /// <summary>
@@ -164,7 +164,7 @@ namespace COPOL.BLL.Models
         {
             if (value < 0)
             {
-                throw new ArgumentException($"{name} не может быть меньше или равна нулю!");
+                throw new ArgumentException($"{name} не может быть меньше нуля!");
             }
         }
     }

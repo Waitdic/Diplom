@@ -94,7 +94,26 @@ namespace COPOL.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            var saveDialog = new SaveFileDialog
+            {
+                Filter = "Файл параметров|*.json"
+            };
 
+            if (saveDialog.ShowDialog() != DialogResult.OK) return;
+            
+            ParametersRepository.SaveParameters(_parameters, saveDialog.FileName);
+        }
+
+        private void UploadButton_Click(object sender, EventArgs e)
+        {
+            var openDialog = new OpenFileDialog
+            {
+                Filter = "Файл параметров|*.json"
+            };
+            
+            if (openDialog.ShowDialog() != DialogResult.OK) return;
+
+            _parameters = ParametersRepository.GetParameters(openDialog.FileName);
         }
     }
 }
