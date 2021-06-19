@@ -38,11 +38,6 @@ namespace COPOL.Forms
         
         private void SetParametersButton_Click(object sender, EventArgs e)
         {
-            if (_parameters == null)
-            {
-                _parameters = new Parameters();
-            }
-            
             var dataForm = new InitialDataForm {Visible = true};
             dataForm.SetParameters(_parameters);
         }

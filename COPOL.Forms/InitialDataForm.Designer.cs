@@ -81,21 +81,21 @@ namespace COPOL.Forms
             this.OkButton = new System.Windows.Forms.Button();
             this.CleanButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.Vds0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Ids0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Vds0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ids0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.gm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Ld)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Ls)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Cgd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Cds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Cgs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ld)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ls)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cgd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cgs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.P)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Z)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.N)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +108,7 @@ namespace COPOL.Forms
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(333, 244);
@@ -119,20 +119,36 @@ namespace COPOL.Forms
             // Vds0
             // 
             this.Vds0.Location = new System.Drawing.Point(48, 213);
-            this.Vds0.Maximum = new decimal(new int[] {1000000, 0, 0, 0});
+            this.Vds0.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.Vds0.Name = "Vds0";
             this.Vds0.Size = new System.Drawing.Size(84, 21);
             this.Vds0.TabIndex = 36;
-            this.Vds0.Value = new decimal(new int[] {3, 0, 0, 0});
+            this.Vds0.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
             // Ids0
             // 
             this.Ids0.Location = new System.Drawing.Point(207, 211);
-            this.Ids0.Maximum = new decimal(new int[] {100000, 0, 0, 0});
+            this.Ids0.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Ids0.Name = "Ids0";
             this.Ids0.Size = new System.Drawing.Size(84, 21);
             this.Ids0.TabIndex = 34;
-            this.Ids0.Value = new decimal(new int[] {500, 0, 0, 0});
+            this.Ids0.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -145,8 +161,8 @@ namespace COPOL.Forms
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image) (resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(6, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(305, 185);
@@ -202,7 +218,7 @@ namespace COPOL.Forms
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(12, 262);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(333, 261);
@@ -213,42 +229,87 @@ namespace COPOL.Forms
             // gm
             // 
             this.gm.Location = new System.Drawing.Point(207, 223);
-            this.gm.Maximum = new decimal(new int[] {100000, 0, 0, 0});
+            this.gm.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.gm.Name = "gm";
             this.gm.Size = new System.Drawing.Size(84, 21);
             this.gm.TabIndex = 40;
+            this.gm.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             // 
             // Ld
             // 
             this.Ld.Location = new System.Drawing.Point(207, 187);
-            this.Ld.Maximum = new decimal(new int[] {1000000, 0, 0, 0});
+            this.Ld.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.Ld.Name = "Ld";
             this.Ld.Size = new System.Drawing.Size(84, 21);
             this.Ld.TabIndex = 39;
+            this.Ld.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             // 
             // Ls
             // 
             this.Ls.Location = new System.Drawing.Point(207, 153);
-            this.Ls.Maximum = new decimal(new int[] {100000, 0, 0, 0});
+            this.Ls.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Ls.Name = "Ls";
             this.Ls.Size = new System.Drawing.Size(84, 21);
             this.Ls.TabIndex = 38;
+            this.Ls.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Cgd
             // 
             this.Cgd.Location = new System.Drawing.Point(48, 222);
-            this.Cgd.Maximum = new decimal(new int[] {1000000, 0, 0, 0});
+            this.Cgd.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.Cgd.Name = "Cgd";
             this.Cgd.Size = new System.Drawing.Size(84, 21);
             this.Cgd.TabIndex = 37;
+            this.Cgd.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             // 
             // Cds
             // 
             this.Cds.Location = new System.Drawing.Point(48, 187);
-            this.Cds.Maximum = new decimal(new int[] {100000, 0, 0, 0});
+            this.Cds.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Cds.Name = "Cds";
             this.Cds.Size = new System.Drawing.Size(84, 21);
             this.Cds.TabIndex = 36;
+            this.Cds.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label14
             // 
@@ -262,10 +323,19 @@ namespace COPOL.Forms
             // Cgs
             // 
             this.Cgs.Location = new System.Drawing.Point(48, 153);
-            this.Cgs.Maximum = new decimal(new int[] {100000, 0, 0, 0});
+            this.Cgs.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Cgs.Name = "Cgs";
             this.Cgs.Size = new System.Drawing.Size(84, 21);
             this.Cgs.TabIndex = 35;
+            this.Cgs.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             // 
             // label15
             // 
@@ -368,8 +438,8 @@ namespace COPOL.Forms
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image) (resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(6, 19);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(305, 117);
@@ -395,7 +465,7 @@ namespace COPOL.Forms
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.Location = new System.Drawing.Point(361, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(191, 244);
@@ -414,7 +484,11 @@ namespace COPOL.Forms
             // P
             // 
             this.P.Location = new System.Drawing.Point(34, 207);
-            this.P.Maximum = new decimal(new int[] {100000, 0, 0, 0});
+            this.P.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.P.Name = "P";
             this.P.Size = new System.Drawing.Size(111, 21);
             this.P.TabIndex = 33;
@@ -422,7 +496,11 @@ namespace COPOL.Forms
             // Z
             // 
             this.Z.Location = new System.Drawing.Point(34, 154);
-            this.Z.Maximum = new decimal(new int[] {100000, 0, 0, 0});
+            this.Z.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Z.Name = "Z";
             this.Z.Size = new System.Drawing.Size(114, 21);
             this.Z.TabIndex = 32;
@@ -430,7 +508,11 @@ namespace COPOL.Forms
             // N
             // 
             this.N.Location = new System.Drawing.Point(34, 100);
-            this.N.Maximum = new decimal(new int[] {100000, 0, 0, 0});
+            this.N.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.N.Name = "N";
             this.N.Size = new System.Drawing.Size(111, 21);
             this.N.TabIndex = 31;
@@ -549,7 +631,7 @@ namespace COPOL.Forms
             this.groupBox4.Controls.Add(this.SaveButton);
             this.groupBox4.Controls.Add(this.OkButton);
             this.groupBox4.Controls.Add(this.CleanButton);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox4.Location = new System.Drawing.Point(361, 262);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(191, 261);
@@ -610,25 +692,26 @@ namespace COPOL.Forms
             this.Text = "Исходные данные";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.Vds0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Ids0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Vds0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ids0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.gm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Ld)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Ls)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Cgd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Cds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Cgs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ld)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ls)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cgd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cgs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.P)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.Z)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.N)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Z)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button UploadButton;

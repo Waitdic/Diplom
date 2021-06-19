@@ -140,21 +140,6 @@ namespace COPOL.BLL.Models
             }
         }
 
-        public Parameters()
-        {
-            _n = 0;
-            _step = 0;
-            _cgs = 0;
-            _cds = 0;
-            _cgd = 0;
-            _ls = 0;
-            _ld = 0;
-            _gm = 0;
-            _vds0 = 0;
-            _ids0 = 0;
-            _loopP = 0;
-        }
-        
         /// <summary>
         /// Проверка присваиваемого значения.
         /// </summary>
