@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Newtonsoft.Json;
 
 namespace COPOL.BLL.Models
@@ -25,7 +23,7 @@ namespace COPOL.BLL.Models
                 var serializer = new JsonSerializer();
                 using var sw = new StreamWriter(fileName);
                 using JsonWriter writer = new JsonTextWriter(sw);
-                serializer.Serialize(writer, new List<Parameters>{ parameters });
+                serializer.Serialize(writer, parameters);
             }
             catch (Exception e)
             {
@@ -40,11 +38,8 @@ namespace COPOL.BLL.Models
                 var deserializer = new JsonSerializer();
                 using var sr = new StreamReader(fileName);
                 using var reader = new JsonTextReader(sr);
-                {  
-                    var listParameters = deserializer.Deserialize<List<Parameters>>(reader);
-                    return listParameters.FirstOrDefault();
+                return deserializer.Deserialize<Parameters>(reader);
                 }
-            }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
