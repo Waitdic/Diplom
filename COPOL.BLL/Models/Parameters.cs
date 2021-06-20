@@ -28,7 +28,7 @@ namespace COPOL.BLL.Models
             get => _frequences;
             set
             {
-                value.ForEach(x => ValidateValue(x, "Частота"));
+                value?.ForEach(x => ValidateValue(x, "Частота"));
                 _frequences = value;
             }
         }
