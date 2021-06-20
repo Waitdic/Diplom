@@ -89,12 +89,31 @@ namespace COPOL.Forms
                 newString = list.Aggregate("", (current, value) => current + value);
             }
 
-            return newString.TrimEnd(new char[] {';', ' '});
+            return newString.TrimEnd(';', ' ');
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            var saveDialog = new SaveFileDialog
+            {
+                Filter = "Файл параметров|*.txt"
+            };
 
+            if (saveDialog.ShowDialog() != DialogResult.OK) return;
+            
+            ParametersRepository.SaveParameters(_parameters, saveDialog.FileName);
+        }
+
+        private void UploadButton_Click(object sender, EventArgs e)
+        {
+            var openDialog = new OpenFileDialog
+            {
+                Filter = "Файл параметров|*.txt"
+            };
+            
+            if (openDialog.ShowDialog() != DialogResult.OK) return;
+
+            _parameters = ParametersRepository.GetParameters(openDialog.FileName);
         }
     }
 }
