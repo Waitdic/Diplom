@@ -17,8 +17,11 @@ namespace COPOL.Forms
 
         public void SetParameters(Parameters parameters)
         {
-            
-            SetValueToForm(parameters);
+            if (parameters != null)
+            {
+                SetValueToForm(parameters);
+            }
+           
             _parameters = parameters;
         }
 
@@ -29,6 +32,11 @@ namespace COPOL.Forms
 
         private void OkButton_Click(object sender, EventArgs e)
         {
+            if (_parameters == null)
+            {
+                _parameters = new Parameters();
+            }
+
             _parameters.Vds0 = (float) Vds0.Value;
             _parameters.Ids0 = (float) Ids0.Value;
 
