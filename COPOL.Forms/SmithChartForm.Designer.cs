@@ -69,13 +69,13 @@ namespace COPOL.Forms
             this.OpenFileButton = new System.Windows.Forms.Button();
             this.SmithChart = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReactiveX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActiveR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Z)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ReactiveX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ActiveR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Z)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pMaxOutput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pMaxOutput)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SmithChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.SmithChart)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -102,7 +102,7 @@ namespace COPOL.Forms
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.groupBox1.Location = new System.Drawing.Point(558, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(190, 207);
@@ -112,44 +112,31 @@ namespace COPOL.Forms
             // 
             // ReactiveX
             // 
+            this.ReactiveX.DecimalPlaces = 2;
             this.ReactiveX.Location = new System.Drawing.Point(44, 147);
-            this.ReactiveX.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
+            this.ReactiveX.Maximum = new decimal(new int[] {10000000, 0, 0, 0});
             this.ReactiveX.Name = "ReactiveX";
             this.ReactiveX.Size = new System.Drawing.Size(100, 21);
             this.ReactiveX.TabIndex = 31;
             // 
             // ActiveR
             // 
+            this.ActiveR.DecimalPlaces = 2;
             this.ActiveR.Location = new System.Drawing.Point(43, 94);
-            this.ActiveR.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
+            this.ActiveR.Maximum = new decimal(new int[] {10000000, 0, 0, 0});
             this.ActiveR.Name = "ActiveR";
             this.ActiveR.Size = new System.Drawing.Size(101, 21);
             this.ActiveR.TabIndex = 30;
             // 
             // Z
             // 
+            this.Z.DecimalPlaces = 2;
             this.Z.Location = new System.Drawing.Point(44, 41);
-            this.Z.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
+            this.Z.Maximum = new decimal(new int[] {10000000, 0, 0, 0});
             this.Z.Name = "Z";
             this.Z.Size = new System.Drawing.Size(100, 21);
             this.Z.TabIndex = 29;
-            this.Z.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
+            this.Z.Value = new decimal(new int[] {50, 0, 0, 0});
             // 
             // label19
             // 
@@ -208,7 +195,7 @@ namespace COPOL.Forms
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label13.Location = new System.Drawing.Point(9, 24);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(142, 14);
@@ -218,7 +205,7 @@ namespace COPOL.Forms
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label14.Location = new System.Drawing.Point(8, 130);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(152, 14);
@@ -228,7 +215,7 @@ namespace COPOL.Forms
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label20.Location = new System.Drawing.Point(9, 77);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(142, 14);
@@ -237,7 +224,7 @@ namespace COPOL.Forms
             // 
             // DrawUsersPoint
             // 
-            this.DrawUsersPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DrawUsersPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.DrawUsersPoint.Location = new System.Drawing.Point(10, 178);
             this.DrawUsersPoint.Name = "DrawUsersPoint";
             this.DrawUsersPoint.Size = new System.Drawing.Size(174, 23);
@@ -338,8 +325,11 @@ namespace COPOL.Forms
             // 
             // pMaxOutput
             // 
+            this.pMaxOutput.DecimalPlaces = 2;
             this.pMaxOutput.Location = new System.Drawing.Point(63, 184);
+            this.pMaxOutput.Maximum = new decimal(new int[] {10000, 0, 0, 0});
             this.pMaxOutput.Name = "pMaxOutput";
+            this.pMaxOutput.ReadOnly = true;
             this.pMaxOutput.Size = new System.Drawing.Size(81, 20);
             this.pMaxOutput.TabIndex = 32;
             // 
@@ -347,7 +337,7 @@ namespace COPOL.Forms
             // 
             this.Pmax_label.AutoSize = true;
             this.Pmax_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Pmax_label.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Pmax_label.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.Pmax_label.Location = new System.Drawing.Point(10, 164);
             this.Pmax_label.Name = "Pmax_label";
             this.Pmax_label.Size = new System.Drawing.Size(116, 14);
@@ -357,7 +347,7 @@ namespace COPOL.Forms
             // mdB
             // 
             this.mdB.AutoSize = true;
-            this.mdB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mdB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.mdB.Location = new System.Drawing.Point(150, 184);
             this.mdB.Name = "mdB";
             this.mdB.Size = new System.Drawing.Size(31, 15);
@@ -367,7 +357,7 @@ namespace COPOL.Forms
             // Pmax
             // 
             this.Pmax.AutoSize = true;
-            this.Pmax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Pmax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.Pmax.Location = new System.Drawing.Point(10, 184);
             this.Pmax.Name = "Pmax";
             this.Pmax.Size = new System.Drawing.Size(52, 15);
@@ -411,7 +401,7 @@ namespace COPOL.Forms
             // 
             // SetParametersButton
             // 
-            this.SetParametersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SetParametersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.SetParametersButton.Location = new System.Drawing.Point(11, 19);
             this.SetParametersButton.Name = "SetParametersButton";
             this.SetParametersButton.Size = new System.Drawing.Size(174, 31);
@@ -433,7 +423,7 @@ namespace COPOL.Forms
             // 
             // CleanButton
             // 
-            this.CleanButton.Location = new System.Drawing.Point(10, 56);
+            this.CleanButton.Location = new System.Drawing.Point(10, 67);
             this.CleanButton.Name = "CleanButton";
             this.CleanButton.Size = new System.Drawing.Size(174, 31);
             this.CleanButton.TabIndex = 13;
@@ -477,16 +467,15 @@ namespace COPOL.Forms
             this.Text = "Диаграмма Смита";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReactiveX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ActiveR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Z)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ReactiveX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ActiveR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.Z)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pMaxOutput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pMaxOutput)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SmithChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.SmithChart)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -523,7 +512,7 @@ namespace COPOL.Forms
         private Label label14;
         private Label label20;
         private Button DrawUsersPoint;
-        private NumericUpDown pMaxOutput;
+        private System.Windows.Forms.NumericUpDown pMaxOutput;
         private Label Pmax_label;
         private Label mdB;
         private Label Pmax;

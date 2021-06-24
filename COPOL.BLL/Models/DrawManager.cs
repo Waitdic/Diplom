@@ -20,7 +20,7 @@ namespace COPOL.BLL.Models
                 throw new ArgumentException("Не удается произвести построение контуров");
             }
 
-            var penRed = new Pen(Color.Red, 2);
+            var penRed = new Pen(Color.Red, 1);
             var penBlue = new Pen(Color.Blue, 3);
 
             var z00 = new Complex(z0, 0);

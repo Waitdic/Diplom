@@ -118,6 +118,11 @@ namespace COPOL.Forms
             // 
             // Vds0
             // 
+            this.Vds0.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            458752});
             this.Vds0.Location = new System.Drawing.Point(48, 213);
             this.Vds0.Maximum = new decimal(new int[] {
             1000000,
@@ -135,6 +140,11 @@ namespace COPOL.Forms
             // 
             // Ids0
             // 
+            this.Ids0.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            458752});
             this.Ids0.Location = new System.Drawing.Point(207, 211);
             this.Ids0.Maximum = new decimal(new int[] {
             100000,
@@ -228,6 +238,7 @@ namespace COPOL.Forms
             // 
             // gm
             // 
+            this.gm.DecimalPlaces = 4;
             this.gm.Location = new System.Drawing.Point(207, 223);
             this.gm.Maximum = new decimal(new int[] {
             100000,
@@ -245,6 +256,12 @@ namespace COPOL.Forms
             // 
             // Ld
             // 
+            this.Ld.DecimalPlaces = 4;
+            this.Ld.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            458752});
             this.Ld.Location = new System.Drawing.Point(207, 187);
             this.Ld.Maximum = new decimal(new int[] {
             1000000,
@@ -262,6 +279,7 @@ namespace COPOL.Forms
             // 
             // Ls
             // 
+            this.Ls.DecimalPlaces = 4;
             this.Ls.Location = new System.Drawing.Point(207, 153);
             this.Ls.Maximum = new decimal(new int[] {
             100000,
@@ -279,6 +297,7 @@ namespace COPOL.Forms
             // 
             // Cgd
             // 
+            this.Cgd.DecimalPlaces = 4;
             this.Cgd.Location = new System.Drawing.Point(48, 222);
             this.Cgd.Maximum = new decimal(new int[] {
             1000000,
@@ -296,6 +315,7 @@ namespace COPOL.Forms
             // 
             // Cds
             // 
+            this.Cds.DecimalPlaces = 4;
             this.Cds.Location = new System.Drawing.Point(48, 187);
             this.Cds.Maximum = new decimal(new int[] {
             100000,
@@ -322,6 +342,7 @@ namespace COPOL.Forms
             // 
             // Cgs
             // 
+            this.Cgs.DecimalPlaces = 4;
             this.Cgs.Location = new System.Drawing.Point(48, 153);
             this.Cgs.Maximum = new decimal(new int[] {
             100000,
@@ -483,6 +504,7 @@ namespace COPOL.Forms
             // 
             // P
             // 
+            this.P.DecimalPlaces = 2;
             this.P.Location = new System.Drawing.Point(34, 207);
             this.P.Maximum = new decimal(new int[] {
             100000,
@@ -531,9 +553,9 @@ namespace COPOL.Forms
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(31, 138);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(120, 15);
+            this.label27.Size = new System.Drawing.Size(30, 15);
             this.label27.TabIndex = 28;
-            this.label27.Text = "Падение мощности";
+            this.label27.Text = "Шаг";
             // 
             // label26
             // 

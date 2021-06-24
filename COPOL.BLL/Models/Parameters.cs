@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace COPOL.BLL.Models
 {
@@ -138,6 +139,30 @@ namespace COPOL.BLL.Models
                 ValidateValue(value, "P");
                 _loopP = value;
             }
+        }
+
+        public List<float> GetFrequencesFromString(string f)
+        {
+            return !string.IsNullOrWhiteSpace(f)
+                ? f
+                    .Replace('.', ',')
+                    .Split(';')
+                    .Select(float.Parse)
+                    .Select(x => (float)(x * Math.Pow(10, 9)))
+                    .ToList()
+                : new List<float>();
+        }
+
+        public string ConvertFrequencesFromListToString()
+        {
+            var newString = "";
+            if (_frequences != null)
+            {
+                var list = _frequences.Select(x => x + "; ");
+                newString = list.Aggregate("", (current, value) => current + value);
+            }
+
+            return newString.TrimEnd(';', ' ');
         }
 
         /// <summary>

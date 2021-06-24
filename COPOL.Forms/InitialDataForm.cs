@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using COPOL.BLL.Models;
 
@@ -17,11 +15,7 @@ namespace COPOL.Forms
 
         public void SetParameters(Parameters parameters)
         {
-            if (parameters != null)
-            {
-                SetValueToForm(parameters);
-            }
-           
+            SetValueToForm(parameters);
             _parameters = parameters;
         }
 
@@ -32,76 +26,15 @@ namespace COPOL.Forms
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            if (_parameters == null)
-            {
-                _parameters = new Parameters();
-            }
-
-            _parameters.Vds0 = (float) Vds0.Value;
-            _parameters.Ids0 = (float) Ids0.Value;
-
-            _parameters.Cgs = (float) Cgs.Value;
-            _parameters.Cds = (float) Cds.Value;
-            _parameters.Cgd = (float) Cgd.Value;
-            _parameters.Ls = (float) Ls.Value;
-            _parameters.Ld = (float) Ld.Value;
-            _parameters.Gm = (float) gm.Value;
-
-            _parameters.N = (int) N.Value;
-            _parameters.Step = (float) Z.Value;
-            _parameters.LoopP = (float) P.Value;
-
-            _parameters.Frequences = GetFrequencesFromString();
+            GetValueFromForm();
 
             this.Close();
             this.Dispose();
         }
 
-        private void SetValueToForm(Parameters parameters)
-        {
-            N.Value = parameters.N;
-            Z.Value = (decimal)parameters.Step;
-            P.Value = (decimal)parameters.LoopP;
-
-            Vds0.Value = (decimal)parameters.Vds0;
-            Ids0.Value = (decimal)parameters.Ids0;
-
-            Cgs.Value = (decimal)parameters.Cgs;
-            Cds.Value = (decimal)parameters.Cds;
-            Cgd.Value = (decimal)parameters.Cgd;
-            Ls.Value = (decimal)parameters.Ls;
-            Ld.Value = (decimal)parameters.Ld;
-            gm.Value = (decimal)parameters.Gm;
-
-            f.Text = ConvertFrequencesFromListToString(parameters.Frequences);
-        }
-
-        private List<float> GetFrequencesFromString()
-        {
-            return !string.IsNullOrWhiteSpace(f.Text) 
-                ? f.Text
-                .Replace('.', ',')
-                .Split(';')
-                .Select(float.Parse)
-                .Select(x => (float)(x * Math.Pow(10, 9)))
-                .ToList() 
-                : new List<float>();
-        }
-
-        private string ConvertFrequencesFromListToString(IEnumerable<float> frequences)
-        {
-            var newString = "";
-            if (frequences != null)
-            {
-                var list = frequences.Select(x => x + "; ");
-                newString = list.Aggregate("", (current, value) => current + value);
-            }
-
-            return newString.TrimEnd(';', ' ');
-        }
-
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            GetValueFromForm();
             var saveDialog = new SaveFileDialog
             {
                 Filter = "Файл параметров|*.txt"
@@ -121,7 +54,55 @@ namespace COPOL.Forms
             
             if (openDialog.ShowDialog() != DialogResult.OK) return;
 
-            _parameters = ParametersRepository.GetParameters(openDialog.FileName);
+            SetValueToForm(ParametersRepository.GetParameters(openDialog.FileName));
+        }
+
+        private void SetValueToForm(Parameters parameters)
+        {
+            if (parameters.Frequences == null)
+            {
+                return;
+            }
+            
+            N.Value = parameters.N;
+            Z.Value = (decimal)parameters.Step;
+            P.Value = (decimal)parameters.LoopP;
+
+            Vds0.Value = (decimal)parameters.Vds0;
+            Ids0.Value = (decimal)parameters.Ids0;
+
+            Cgs.Value = (decimal)parameters.Cgs;
+            Cds.Value = (decimal)parameters.Cds;
+            Cgd.Value = (decimal)parameters.Cgd;
+            Ls.Value = (decimal)parameters.Ls;
+            Ld.Value = (decimal)parameters.Ld;
+            gm.Value = (decimal)parameters.Gm;
+
+            f.Text = parameters.ConvertFrequencesFromListToString();
+        }
+
+        private void GetValueFromForm()
+        {
+            if (_parameters == null)
+            {
+                _parameters = new Parameters();
+            }
+
+            _parameters.Vds0 = (float)Vds0.Value;
+            _parameters.Ids0 = (float)Ids0.Value;
+
+            _parameters.Cgs = (float)Cgs.Value;
+            _parameters.Cds = (float)Cds.Value;
+            _parameters.Cgd = (float)Cgd.Value;
+            _parameters.Ls = (float)Ls.Value;
+            _parameters.Ld = (float)Ld.Value;
+            _parameters.Gm = (float)gm.Value;
+
+            _parameters.N = (int)N.Value;
+            _parameters.Step = (float)Z.Value;
+            _parameters.LoopP = (float)P.Value;
+
+            _parameters.Frequences = _parameters.GetFrequencesFromString(f.Text);
         }
     }
 }

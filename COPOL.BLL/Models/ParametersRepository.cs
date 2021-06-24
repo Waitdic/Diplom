@@ -39,7 +39,7 @@ namespace COPOL.BLL.Models
                 using var sr = new StreamReader(fileName);
                 using var reader = new JsonTextReader(sr);
                 return deserializer.Deserialize<Parameters>(reader);
-                }
+            }
             catch (Exception e)
             {
                 throw new Exception(e.Message);

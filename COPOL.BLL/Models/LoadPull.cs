@@ -67,8 +67,8 @@ namespace COPOL.BLL.Models
                     if (pOutDBm > 0)
                     {
                         var circlesParameters = CalculatingCirclesParameters(p, pMax, rOpt);
-                        var alpha = (double) circlesParameters["alpha"];
-                        var beta = (double) circlesParameters["beta"];
+                        var alpha = (double)((float)circlesParameters["alpha"]);
+                        var beta = (double)((float)circlesParameters["beta"]);
                         var pointsOfOldContours = CalculatePointsOfOldContours(
                             alpha,
                             beta,
