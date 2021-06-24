@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using COPOL.BLL;
 using COPOL.BLL.Models;
@@ -10,6 +9,7 @@ namespace COPOL.Forms
     {
         private readonly SmithChart _smithChart = new SmithChart();
         private Parameters _parameters;
+        private PaintEventArgs _graphicsBase;
 
         // Центры горизонтальных окружностей. 
         private static readonly float[] BaseArg1 = {
@@ -52,63 +52,8 @@ namespace COPOL.Forms
         /// </summary>
         private void SmithChart_Paint(object sender, PaintEventArgs e)
         {
-            float xCross; 
-            float yCross;
-            var userPen = new Pen(Color.DarkGray);
-
-            // TODO : Подумать над тем чтобы не добавлять их
-            // Draw axises
-            /*_smithChart.AxesCount = 3;
-            _smithChart.DrawAxises(e.Graphics);*/
-
-            // Рисуем основную окружность.
-            for (var i = 0; i < _arg1.Length; i++)
-            {
-                _smithChart.DrawCircleType1(
-                    e.Graphics,
-                    i == 0 ? new Pen(Color.Black, 3) : userPen,
-                    _arg1[i]);
-
-                xCross = (_arg1[i] - 1) / (_arg1[i] + 1);
-                yCross = 0;
-
-                _smithChart.DrawText(
-                    e.Graphics,
-                    Color.Blue,
-                    new Font(
-                        "Arial",
-                        7,
-                        FontStyle.Bold),
-                    Math.Round(_arg1[i], 2).ToString(),
-                    xCross,
-                    yCross);
-            }
-
-            // Рисуем сетку диграммы Смита.
-            foreach (var arg in _arg2)
-            {
-                _smithChart.DrawCircleType2(e.Graphics, userPen, arg);
-                _smithChart.DrawCircleType2(e.Graphics, userPen, -arg);
-                
-                xCross = ((arg * arg) - 1) / ((arg * arg) + 1);
-                yCross = (2 * arg) / ((arg * arg) + 1);
-
-                _smithChart.DrawText(
-                    e.Graphics, Color.Blue,
-                    new Font("Arial", 7, FontStyle.Bold),
-                    Math.Round(arg, 2).ToString(),
-                    xCross,
-                    yCross);
-                
-                _smithChart.DrawText(
-                    e.Graphics,
-                    Color.Blue,
-                    new Font("Arial", 7, FontStyle.Bold),
-                    Math.Round(-arg, 2).ToString(),
-                    xCross,
-                    -yCross);
-            }
-            //btnBack.Enabled = false;
+            _smithChart.DrawGraphics(e, _arg1, _arg2);
+            _graphicsBase = e;
         }
 
         private void BuildButton_Click(object sender, EventArgs e)
@@ -151,7 +96,7 @@ namespace COPOL.Forms
                 // Рисуем контура.
                 DrawManager.DrawContours(
                     outputPoint,
-                    this.SmithChart.CreateGraphics(),
+                    SmithChart.CreateGraphics(),
                     _smithChart,
                     builder,
                     z0);
@@ -160,7 +105,6 @@ namespace COPOL.Forms
             {
                 MessageBox.Show(ex.Message, "Ошибка.");
             }
-            
         }
 
         private void DrawUsersPoint_Click(object sender, EventArgs e)
@@ -183,17 +127,19 @@ namespace COPOL.Forms
 
             //рисуем точку
             _smithChart.DrawUserCircles(objGraphics, (int)Z.Value, (int)ActiveR.Value, (int)ReactiveX.Value);
-
-            /*//делаем доступной для нажатия кнопку отмена
-            if (btnBack.Enabled == false)
-            {
-                btnBack.Enabled = true;
-            }*/
         }
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
+            Z.Value = 50;
+            ReactiveX.Value = 0;
+            ActiveR.Value = 0;
+            
+            _arg1 = BaseArg1;
+            _arg2 = BaseArg2;
 
+            SmithChart.Paint += SmithChart_Paint;
+            SmithChart.Refresh();
         }
 
         private void OpenFileButton_Click(object sender, EventArgs e)

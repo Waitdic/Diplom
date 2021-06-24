@@ -158,7 +158,7 @@ namespace COPOL.BLL.Models
             var newString = "";
             if (_frequences != null)
             {
-                var list = _frequences.Select(x => x + "; ");
+                var list = _frequences.Select(x => x * Math.Pow(10, -9) + "; ");
                 newString = list.Aggregate("", (current, value) => current + value);
             }
 

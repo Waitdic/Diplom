@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
 using COPOL.BLL.Enums;
 
 namespace COPOL.BLL
@@ -25,57 +26,61 @@ namespace COPOL.BLL
         
         /// <summary>Rол-во осей в сетке координат (по умолчанию по одной оси для x и y).</summary>
         private int _mnAxesCount = 1;
-
-        // TODO : Возможно исключить данный метод.
-        /*/// <summary>
-        /// Метод рисования координатных осей.
-        /// </summary>
-        /// <param name="objGraphics">График.</param>
-        public void DrawAxises(Graphics objGraphics)
+        
+        public void DrawGraphics(PaintEventArgs e, float[] arg1, float[] arg2)
         {
-            var drawRect = objGraphics.VisibleClipBounds;
-            var pen = new Pen(Color.Black) { DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot };
+            float xCross; 
+            float yCross;
+            var userPen = new Pen(Color.DarkGray);
 
-            // Горизонтальные оси X
-            var myBrush = new SolidBrush(Color.Blue);
-            var textFont = new Font("Arial", 7);
-            for (var i = 0; i < _mnAxesCount; ++i)
+            // Рисуем основную окружность.
+            for (var i = 0; i < arg1.Length; i++)
             {
-                var y = Convert.ToInt32(drawRect.Height) / (_mnAxesCount + 1) * (i + 1);
-                var p1 = new Point(0, y);
-                var p2 = new Point(Convert.ToInt32(drawRect.Right), y);
-                objGraphics.DrawLine(pen, p1, p2);
+                DrawCircleType1(
+                    e.Graphics,
+                    i == 0 ? new Pen(Color.Black, 3) : userPen,
+                    arg1[i]);
 
-                // Подписи к осям
-                var xText = _xMin;
-                var yText = _yMin + ((_yMax - _yMin) / (_mnAxesCount + 1) * (i + 1));
-                var text = String.Format("{0:G}", yText);
+                xCross = (arg1[i] - 1) / (arg1[i] + 1);
+                yCross = 0;
 
-                ConvertCoord(CoordinateType.X, objGraphics, ref xText);
-                ConvertCoord(CoordinateType.Y, objGraphics, ref yText);
-                objGraphics.DrawString(text, textFont, myBrush, xText, yText);
+                DrawText(
+                    e.Graphics,
+                    Color.Blue,
+                    new Font(
+                        "Arial",
+                        7,
+                        FontStyle.Bold),
+                    Math.Round(arg1[i], 2).ToString(),
+                    xCross,
+                    yCross);
             }
 
-            // Вертикальные оси Y
-            for (var i = 0; i < _mnAxesCount; ++i)
+            // Рисуем сетку диграммы Смита.
+            foreach (var arg in arg2)
             {
-                var x = Convert.ToInt32(drawRect.Width) / (_mnAxesCount + 1) * (i + 1);
-                var p3 = new Point(x, 0);
-                var p4 = new Point(x, Convert.ToInt32(drawRect.Height));
-                objGraphics.DrawLine(pen, p3, p4);
+                DrawCircleType2(e.Graphics, userPen, arg);
+                DrawCircleType2(e.Graphics, userPen, -arg);
+                
+                xCross = ((arg * arg) - 1) / ((arg * arg) + 1);
+                yCross = (2 * arg) / ((arg * arg) + 1);
 
-                // Подписи к осям
-                var yText = _yMax;
-                var xText = _xMin + ((_xMax - _xMin) / (_mnAxesCount + 1) * (i + 1));
-                var text = String.Format("{0:G}", xText);
-
-                ConvertCoord(CoordinateType.X, objGraphics, ref xText);
-                ConvertCoord(CoordinateType.Y, objGraphics, ref yText);
-                objGraphics.DrawString(text, textFont, myBrush, xText, yText);
+                DrawText(
+                    e.Graphics, Color.Blue,
+                    new Font("Arial", 7, FontStyle.Bold),
+                    Math.Round(arg, 2).ToString(),
+                    xCross,
+                    yCross);
+                
+                DrawText(
+                    e.Graphics,
+                    Color.Blue,
+                    new Font("Arial", 7, FontStyle.Bold),
+                    Math.Round(-arg, 2).ToString(),
+                    xCross,
+                    -yCross);
             }
-
-            pen.Dispose();
-        }*/
+        }
         
         /// <summary>
         /// Метод для рисования окружностей первого типа.
