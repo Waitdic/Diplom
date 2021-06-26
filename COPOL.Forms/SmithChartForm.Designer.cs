@@ -61,7 +61,7 @@ namespace COPOL.Forms
             this.Pmax = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.SavePointButton = new System.Windows.Forms.Button();
             this.BuildButton = new System.Windows.Forms.Button();
             this.SetParametersButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -313,7 +313,7 @@ namespace COPOL.Forms
             this.groupBox2.Controls.Add(this.Pmax);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.SavePointButton);
             this.groupBox2.Controls.Add(this.BuildButton);
             this.groupBox2.Controls.Add(this.SetParametersButton);
             this.groupBox2.Location = new System.Drawing.Point(558, 220);
@@ -380,14 +380,15 @@ namespace COPOL.Forms
             this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 12;
             // 
-            // button3
+            // SavePointButton
             // 
-            this.button3.Location = new System.Drawing.Point(10, 118);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(174, 31);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Сохранить точки";
-            this.button3.UseVisualStyleBackColor = true;
+            this.SavePointButton.Location = new System.Drawing.Point(10, 118);
+            this.SavePointButton.Name = "SavePointButton";
+            this.SavePointButton.Size = new System.Drawing.Size(174, 31);
+            this.SavePointButton.TabIndex = 11;
+            this.SavePointButton.Text = "Сохранить точки";
+            this.SavePointButton.UseVisualStyleBackColor = true;
+            this.SavePointButton.Click += new System.EventHandler(this.SavePointButton_Click);
             // 
             // BuildButton
             // 
@@ -477,6 +478,8 @@ namespace COPOL.Forms
             ((System.ComponentModel.ISupportInitialize) (this.SmithChart)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button SavePointButton;
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;

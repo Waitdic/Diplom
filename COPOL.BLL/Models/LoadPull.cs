@@ -26,6 +26,11 @@ namespace COPOL.BLL.Models
             Z0 = z0;
         }
 
+        /// <summary>
+        /// Расчет точек контуров выходной мощности.
+        /// </summary>
+        /// <returns>Точки в HashTable.</returns>
+        /// <exception cref="ArgumentException">ArgumentException.</exception>
         public Hashtable CalculatePoint()
         {
             var vMax = 2 * (_parameters.Vds0 - VSat);
@@ -34,7 +39,7 @@ namespace COPOL.BLL.Models
             var rOpt = (vMax / iMax);
             foreach (var frequence in _parameters.Frequences)
             {
-                //рассчитываем оптимальную нагрузку для каждой частоты
+                // Расчет оптимальной нагрузки для каждой частоты.
                 var rOptComplex = new Complex(rOpt, 0);
                 var zOpt = CalculateOptimalLoad(rOptComplex, frequence);
                 ZOpt.Add("F = " + (frequence * Math.Pow(10,-9)), zOpt);
@@ -43,27 +48,24 @@ namespace COPOL.BLL.Models
                 var pMaxDBm = (float)(10 * Math.Log10((1000 * pMax)));
                 PMaxOutput = pMaxDBm;
 
-                var differenceFromPToPmax = _parameters.Step;
-                if (differenceFromPToPmax == 0)
+                var stepPToPmax = _parameters.Step;
+                if (stepPToPmax == 0)
                 {
-                    differenceFromPToPmax = pMaxDBm - _parameters.LoopP;
+                    stepPToPmax = pMaxDBm - _parameters.LoopP;
                 }
 
                 // Падение в dBm на каждом контуре.
-                var step = differenceFromPToPmax;
+                var step = stepPToPmax;
                 
                 // Цикл для каждого контура.
                 for (var i = 0; i < _parameters.N; i++)
                 {
-                    // TODO : странный расчет для каждого шага.
-                    //рассчитываем мощность для каждого контура
+                    // Расчет мощности для каждого контура.
                     var pOutDBm = pMaxDBm - step;
-                    
                     var p = (float) (pMax / Math.Pow(10, ((pMaxDBm - pOutDBm) / 10)));
                     
-                    //точки сдвинутых контуров для каждой частоты
-                    var pointsOfShiftContours = new List<Complex>(); 
-
+                    // Точки сдвинутых контуров для каждой частоты.
+                    var pointsOfShiftContours = new List<Complex>();
                     if (pOutDBm > 0)
                     {
                         var circlesParameters = CalculatingCirclesParameters(p, pMax, rOpt);
@@ -81,7 +83,7 @@ namespace COPOL.BLL.Models
                             .AddRange(pointsOfOldContours
                                 .Select(point => CalculatePointsOfNewContours(point, frequence)));
 
-                        step += differenceFromPToPmax;
+                        step += stepPToPmax;
                     }
                     else
                     {
@@ -89,8 +91,7 @@ namespace COPOL.BLL.Models
                             "Не удается произвести расчет контуров для указанных данных." +
                             "\nПопробуйте изменить значение количества контуров или падения мощности.");
                     }
-
-                    //записываем только 1 символ после запятой
+                    
                     var str2 = Math.Round(pOutDBm, 2).ToString("F1");
                     var key = "F = " + frequence + " " + "P = " + str2;
                     

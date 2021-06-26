@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Windows.Forms;
 using COPOL.BLL;
 using COPOL.BLL.Models;
@@ -9,7 +10,7 @@ namespace COPOL.Forms
     {
         private readonly SmithChart _smithChart = new SmithChart();
         private Parameters _parameters;
-        private PaintEventArgs _graphicsBase;
+        private Hashtable outputPoints;
 
         // Центры горизонтальных окружностей. 
         private static readonly float[] BaseArg1 = {
@@ -53,7 +54,6 @@ namespace COPOL.Forms
         private void SmithChart_Paint(object sender, PaintEventArgs e)
         {
             _smithChart.DrawGraphics(e, _arg1, _arg2);
-            _graphicsBase = e;
         }
 
         private void BuildButton_Click(object sender, EventArgs e)
@@ -90,12 +90,12 @@ namespace COPOL.Forms
                     z0);
 
                 // Рассчитываем точки контуров. 
-                var outputPoint = builder.CalculatePoint();
+                outputPoints = builder.CalculatePoint();
                 pMaxOutput.Value = (decimal)Math.Round(builder.PMaxOutput, 2);
             
                 // Рисуем контура.
                 DrawManager.DrawContours(
-                    outputPoint,
+                    outputPoints,
                     SmithChart.CreateGraphics(),
                     _smithChart,
                     builder,
@@ -144,7 +144,33 @@ namespace COPOL.Forms
 
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
+            // OpenFileButtonPressed = true;//кнопка была нажата
+            outputPoints = null;
+            var openDialog = new OpenFileDialog { Filter = "Файл данных|*.rgn" };
 
+            if (openDialog.ShowDialog() != DialogResult.OK) return; 
+            
+            var points = new LoadPointsManager();
+            var tableOfContoursFromFile = points.LoadPoints(openDialog.FileName);
+            DrawManager.DrawContours2(
+                tableOfContoursFromFile,
+                SmithChart.CreateGraphics(),
+                _smithChart);
+        }
+
+        private void SavePointButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var saveDialog = new SaveFileDialog { Filter = "Файл данных|*.rgn" };
+
+                if (saveDialog.ShowDialog() != DialogResult.OK) return;
+                SavePointsManager.SavePoints(outputPoints, saveDialog.FileName);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Ошибка при сохранение: " + exception.Message, "Ошибка");
+            }
         }
     }
 }
