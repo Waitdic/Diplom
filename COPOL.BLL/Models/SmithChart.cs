@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using COPOL.BLL.Enums;
 
-namespace COPOL.BLL
+namespace COPOL.BLL.Models
 {
     /// <summary>
     /// Класс для рисование диаграммы Смитта.
@@ -88,7 +88,7 @@ namespace COPOL.BLL
         /// <param name="objGraphics">График.</param>
         /// <param name="userPen">Средство рисования.</param>
         /// <param name="argParam">Центры окружностей.</param>
-        public void DrawCircleType1(Graphics objGraphics, Pen userPen, float argParam /* R' */)
+        private void DrawCircleType1(Graphics objGraphics, Pen userPen, float argParam)
         {
             var nCenterX = argParam / (1 + argParam);   // u - из книги
             var nCenterY = 0f;                               // v - из книги
@@ -114,7 +114,7 @@ namespace COPOL.BLL
         /// <param name="objGraphics">График.</param>
         /// <param name="userPen">Средство рисования.</param>
         /// <param name="argParam">Центры окружностей.</param>
-        public void DrawCircleType2(Graphics objGraphics, Pen userPen, float argParam)
+        private void DrawCircleType2(Graphics objGraphics, Pen userPen, float argParam)
         {
             var drawRect = new Rectangle();
             
