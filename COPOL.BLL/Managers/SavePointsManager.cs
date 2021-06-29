@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using COPOL.BLL.Models;
 
-namespace COPOL.BLL.Models
+namespace COPOL.BLL.Managers
 {
     public static class SavePointsManager
     {

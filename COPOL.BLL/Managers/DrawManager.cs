@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using COPOL.BLL.Enums;
+using COPOL.BLL.Models;
 
-namespace COPOL.BLL.Models
+namespace COPOL.BLL.Managers
 {
     public static class DrawManager
     {

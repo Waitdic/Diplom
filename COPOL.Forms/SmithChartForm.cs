@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Windows.Forms;
 using COPOL.BLL;
+using COPOL.BLL.Managers;
 using COPOL.BLL.Models;
 
 namespace COPOL.Forms
@@ -137,7 +138,8 @@ namespace COPOL.Forms
             
             _arg1 = BaseArg1;
             _arg2 = BaseArg2;
-
+            
+            //SmithChart.Paint -= SmithChart_Paint;
             SmithChart.Paint += SmithChart_Paint;
             SmithChart.Refresh();
         }

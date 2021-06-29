@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using COPOL.BLL.Enums;
 
-namespace COPOL.BLL
+namespace COPOL.BLL.Models
 {
     /// <summary>
     /// Класс для рисование диаграммы Смитта.

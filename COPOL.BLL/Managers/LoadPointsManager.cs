@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using COPOL.BLL.Models;
 
-namespace COPOL.BLL.Models
+namespace COPOL.BLL.Managers
 {
     public class LoadPointsManager
     {

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace COPOL.BLL.Models
 {
-    public class ParametersRepository
+    public static class ParametersRepository
     {
         public static void SaveParameters(Parameters parameters, string fileName)
         {
