@@ -51,8 +51,7 @@
   <ItemGroup>
     <Compile Include="Enums\CoordinateType.cs" />
     <Compile Include="Managers\DrawManager.cs" />
-    <Compile Include="Managers\LoadPointsManager.cs" />
-    <Compile Include="Managers\SavePointsManager.cs" />
+    <Compile Include="Managers\PointsManager.cs" />
     <Compile Include="Models\Complex.cs" />
     <Compile Include="Models\LoadPull.cs" />
     <Compile Include="Models\Parameters.cs" />

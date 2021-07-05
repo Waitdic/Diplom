@@ -8,8 +8,9 @@ namespace FunctionalTests
     [TestFixture]
     public class LoadPullTests
     {
-        [TestCase(TestName = "Тест на правильный расчет точек. Позитивный тест.")]
-        public void LoadPull_CalculatePoint_CorrectResult()
+        [TestCase(1, 0, TestName = "Тест на правильный расчет точек. Позитивный тест.")]
+        [TestCase(0, 22, TestName = "Тест на правильный расчет точек при шаге 0. Позитивный тест.")]
+        public void LoadPull_CalculatePoint_CorrectResult(int step, float p)
         {
             // SetUp
             var parameters = ParametersHelper.GetParameters();
@@ -24,9 +25,9 @@ namespace FunctionalTests
                 Ld = (float) (parameters.Ld * Math.Pow(10, -9)),
                 Gm = (float) (parameters.Gm * Math.Pow(10, -3)),
                 Frequences = parameters.Frequences,
-                LoopP = parameters.LoopP,
+                LoopP = p,
                 N = parameters.N,
-                Step = parameters.Step,
+                Step = step,
             };
             
             // Act

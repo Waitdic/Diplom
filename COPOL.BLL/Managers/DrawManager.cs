@@ -104,11 +104,14 @@ namespace COPOL.BLL.Managers
                     smithСhart.ReverseConvertCoords(graphics, ref uCoord, ref vCoord);
                     smithСhart.ReverseConvertCoords(graphics, ref freqX, ref freqY);
                     
-                    if (CheckInsideCircle(uCoord, vCoord))
+                    // Рисуем точку контура.
+                    graphics.DrawEllipse(_penRed, x, y, 2, 2);
+                    
+                    /*if (CheckInsideCircle(uCoord, vCoord))
                     {
                         // Рисуем точку контура.
                         graphics.DrawEllipse(_penRed, x, y, 2, 2);
-                    }
+                    }*/
                 }
             }
         }

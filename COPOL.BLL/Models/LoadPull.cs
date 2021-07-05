@@ -9,16 +9,16 @@ namespace COPOL.BLL.Models
     public class LoadPull
     {
         private readonly Parameters _parameters;
-        private readonly Hashtable _points = new Hashtable();
+        private readonly Hashtable _points = new ();
 
         private const float VSat = 1.5f;
         private const float Rd = 2f;
 
         private float Z0;
-        private Hashtable _zOpt = new Hashtable();
+        private Hashtable _zOpt = new ();
 
         public float PMaxOutput { get; private set; }
-        public Hashtable ZOpt { get => _zOpt; private set => _zOpt = value; }
+        public Hashtable ZOpt { get => _zOpt; }
 
         public LoadPull(Parameters parameters, float z0)
         {
@@ -95,14 +95,16 @@ namespace COPOL.BLL.Models
                     var str2 = Math.Round(pOutDBm, 2).ToString("F1");
                     var key = "F = " + frequence + " " + "P = " + str2;
                     
-                    try
+                    _points.Add(key, pointsOfShiftContours);
+                    
+                    /*try
                     {
                         _points.Add(key, pointsOfShiftContours);
                     }
                     catch
                     {
                         throw new ArgumentException("Ошибка при заполнении массива данных", "Ошибка");
-                    }
+                    }*/
                 }
             }
 

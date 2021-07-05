@@ -543,7 +543,6 @@ namespace COPOL.Forms
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button BuildButton;
         private System.Windows.Forms.Button SetParametersButton;
         private System.Windows.Forms.GroupBox groupBox3;

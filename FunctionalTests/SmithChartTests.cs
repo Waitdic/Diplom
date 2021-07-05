@@ -1,4 +1,4 @@
-﻿/*using COPOL.BLL.Models;
+﻿using COPOL.BLL.Models;
 using NUnit.Framework;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,16 +9,17 @@ namespace FunctionalTests
     public class SmithChartTests
     {
         private readonly PictureBox _graphics = new();
+        private SmithChart _chartManager = new ();
         
         // Центры горизонтальных окружностей. 
-        private static readonly float[] _arg2 = {
+        private static readonly float[] _arg1 = {
             0.0f, 0.2f, 0.4f, 0.6f,
             0.8f, 1.0f, 1.4f, 1.8f, 
             2.2f, 3.0f, 4.0f, 5.0f, 10.0f
         };
         
         // Центры Вертикальных окружностей. 
-        private static readonly float[] _arg1 = { 
+        private static readonly float[] _arg2 = { 
             0.2f, 0.4f, 0.6f, 0.8f, 1.0f,
             1.2f, 1.4f, 1.6f, 1.9f, 2.3f,
             3.0f, 4.0f, 5.0f, 10.0f
@@ -32,7 +33,6 @@ namespace FunctionalTests
             _graphics.Size = new Size(540, 540);
             _graphics.TabIndex = 11;
             _graphics.TabStop = false;
-            _graphics.Paint += CreateGraphics_Paint;
         }
         
         [TestCase(TestName = "Тест для проверки рисования диаграммы Смита.")]
@@ -40,22 +40,27 @@ namespace FunctionalTests
         {
             // SetUp
             Initial();
-            _graphics.Ini
-            
-            // Act
-            
-            
-            // Assert
-            // Assert.NotNull(e.Graphics);
-        }
 
-        private void CreateGraphics_Paint(object sender, PaintEventArgs e)
+            // Act
+            _chartManager.DrawGraphics(_graphics.CreateGraphics(), _arg1, _arg2);
+        }
+        
+        [TestCase(20, 20,
+            TestName = "Тест для проверки рисования точек с сопротивлеями {0} и {1}" +
+                       " на диаграмме Смита.")]
+        [TestCase(0, 0,
+            TestName = "Тест для проверки рисования точек с сопротивлеями {0} и {1}" +
+                       " на диаграмме Смита.")]
+        [TestCase(-70, 20,
+            TestName = "Тест для проверки рисования точек с сопротивлеями {0} и {1}" +
+                       " на диаграмме Смита.")]
+        public void SmithChart_DrawUserCircles_CorrectResult(int r, int x)
         {
             // SetUp
-            var chartManager = new SmithChart();
-            
+            Initial();
+
             // Act
-            chartManager.DrawGraphics(e, _arg1, _arg2);
+            _chartManager.DrawUserCircles(_graphics.CreateGraphics(), 50, r, x);
         }
     }
-}*/
+}
