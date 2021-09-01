@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using COPOL.BLL.Models;
+using COPOL.BLL.Repositories;
 
 namespace COPOL.Forms
 {

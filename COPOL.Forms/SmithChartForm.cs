@@ -54,7 +54,7 @@ namespace COPOL.Forms
         /// </summary>
         private void SmithChart_Paint(object sender, PaintEventArgs e)
         {
-            _smithChart.DrawGraphics(e, _arg1, _arg2);
+            _smithChart.DrawGraphics(e.Graphics, _arg1, _arg2);
         }
 
         private void BuildButton_Click(object sender, EventArgs e)
@@ -152,8 +152,7 @@ namespace COPOL.Forms
 
             if (openDialog.ShowDialog() != DialogResult.OK) return; 
             
-            var points = new LoadPointsManager();
-            var tableOfContoursFromFile = points.LoadPoints(openDialog.FileName);
+            var tableOfContoursFromFile = PointsManager.LoadPoints(openDialog.FileName);
             DrawManager.DrawContours2(
                 tableOfContoursFromFile,
                 SmithChart.CreateGraphics(),
@@ -167,7 +166,7 @@ namespace COPOL.Forms
                 var saveDialog = new SaveFileDialog { Filter = "Файл данных|*.rgn" };
 
                 if (saveDialog.ShowDialog() != DialogResult.OK) return;
-                SavePointsManager.SavePoints(outputPoints, saveDialog.FileName);
+                PointsManager.SavePoints(outputPoints, saveDialog.FileName);
             }
             catch (Exception exception)
             {
