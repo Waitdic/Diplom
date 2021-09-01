@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
 using COPOL.BLL.Enums;
 
 namespace COPOL.BLL.Models
@@ -23,11 +22,8 @@ namespace COPOL.BLL.Models
         
         /// <summary>Минимального значения y на диаграмме.</summary>
         private float _yMin = -1;
-        
-        /// <summary>Rол-во осей в сетке координат (по умолчанию по одной оси для x и y).</summary>
-        private int _mnAxesCount = 1;
-        
-        public void DrawGraphics(PaintEventArgs e, float[] arg1, float[] arg2)
+
+        public void DrawGraphics(Graphics e, float[] arg1, float[] arg2)
         {
             float xCross; 
             float yCross;
@@ -37,7 +33,7 @@ namespace COPOL.BLL.Models
             for (var i = 0; i < arg1.Length; i++)
             {
                 DrawCircleType1(
-                    e.Graphics,
+                    e,
                     i == 0 ? new Pen(Color.Black, 3) : userPen,
                     arg1[i]);
 
@@ -45,7 +41,7 @@ namespace COPOL.BLL.Models
                 yCross = 0;
 
                 DrawText(
-                    e.Graphics,
+                    e,
                     Color.Blue,
                     new Font(
                         "Arial",
@@ -59,21 +55,21 @@ namespace COPOL.BLL.Models
             // Рисуем сетку диграммы Смита.
             foreach (var arg in arg2)
             {
-                DrawCircleType2(e.Graphics, userPen, arg);
-                DrawCircleType2(e.Graphics, userPen, -arg);
+                DrawCircleType2(e, userPen, arg);
+                DrawCircleType2(e, userPen, -arg);
                 
                 xCross = ((arg * arg) - 1) / ((arg * arg) + 1);
                 yCross = (2 * arg) / ((arg * arg) + 1);
 
                 DrawText(
-                    e.Graphics, Color.Blue,
+                    e, Color.Blue,
                     new Font("Arial", 7, FontStyle.Bold),
                     Math.Round(arg, 2).ToString(),
                     xCross,
                     yCross);
                 
                 DrawText(
-                    e.Graphics,
+                    e,
                     Color.Blue,
                     new Font("Arial", 7, FontStyle.Bold),
                     Math.Round(-arg, 2).ToString(),
@@ -182,8 +178,6 @@ namespace COPOL.BLL.Models
                 case CoordinateType.Y:
                     nCoord = (drawRect.Height - 15) * ((_yMax - nCoord) / (_yMax - _yMin));
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException("Ошибка. " + nameof(coordType));
             }
         }
         
@@ -205,8 +199,6 @@ namespace COPOL.BLL.Models
                 case CoordinateType.Y:
                     nLength = (drawRect.Height - 15) * (nLength / (_yMax - _yMin));
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException("Ошибка. " + nameof(coordType));
             }
         }
 

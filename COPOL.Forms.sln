@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COPOL.Forms", "COPOL.Forms\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COPOL.BLL", "COPOL.BLL\COPOL.BLL.csproj", "{DDE25DE8-28F0-4F41-A0CE-995C5C3BF0F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalTests", "FunctionalTests\FunctionalTests.csproj", "{F1F93EEB-24A2-4162-A40A-9007C73181F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DDE25DE8-28F0-4F41-A0CE-995C5C3BF0F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE25DE8-28F0-4F41-A0CE-995C5C3BF0F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDE25DE8-28F0-4F41-A0CE-995C5C3BF0F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1F93EEB-24A2-4162-A40A-9007C73181F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1F93EEB-24A2-4162-A40A-9007C73181F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1F93EEB-24A2-4162-A40A-9007C73181F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1F93EEB-24A2-4162-A40A-9007C73181F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
